@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import RockTexture from "./media/textures/normal texture/rock.jpg";
 
 const cursorCanvas = document.querySelector(".cursorCanvas");
 
@@ -16,7 +17,7 @@ const sizes = {
 };
 
 const textureLoader = new THREE.TextureLoader();
-const rockTexture = textureLoader.load("media/textures/normal texture/rock.jpg");
+const rockTexture = textureLoader.load(RockTexture);
 
 const directionalLight = new THREE.DirectionalLight(0xff0000, .5);
 scene.add(directionalLight);

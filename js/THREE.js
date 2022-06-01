@@ -7,6 +7,7 @@ import '../css/style.css';
 import datGui from "dat.gui";
 import RockTexture from "../media/textures/normal texture/rock.jpg";
 import ParticleTexture from "../media/textures/particles/1.png";
+import gsap from "gsap";
 
 /**
  * variables
@@ -220,11 +221,34 @@ const tick = () => {
 };
 tick();
 
-// function scrolled() {
-//   const time = document.body.getBoundingClientRect().top;
+gsap.from(camera.position, {
+  duration: 4,
+  x: -5,
+  y: .5,
+  z: 50,
+  delay: 3.5
+});
+gsap.from(camera.rotation, {
+  duration: 3,
+  x: 0,
+  y: 3,
+  z: 0,
+  delay: 3.5
+});
 
-//   // particals.rotation.x = time * .001;
-//   // particals.rotation.y = time * .001;
-// }
+/**
+ * responsive
+ */
+window.addEventListener("resize", () => {
+  alignCamera();
 
-// document.body.onscroll = scrolled;
+});
+function alignCamera() {
+  if (window.innerWidth < 705) {
+    camera.position.set(0, -3, 15);
+  }
+  else {
+    camera.position.set(-5, .5, 15);
+  }
+}
+alignCamera();

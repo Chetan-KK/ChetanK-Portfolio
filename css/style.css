@@ -1,7 +1,7 @@
 :root{
     --primary-color:red;
     --secondry-color: white;
-    --gray: #3b3b3b5e;
+    --gray: #2424245e;
     --loading-overlay:rgba(0, 0, 0, 0.692);
     --black:black;
     --transition: 200ms;
@@ -272,6 +272,57 @@ body{
     height: 40rem;
     border-radius: 20px;
 }
-@media screen and (max-width:500px){
-    
+@media screen and (max-width:900px){
+    .main-about .main-description{
+        width: auto;
+        height: auto;
+    }
+    .main-about::before{
+        left: 40px;
+        top: 0px;
+    }
+    .main-about::after{
+        left: 30px;
+        top: 20px;
+    }
+}
+@media screen and (max-width:710px){
+    .header{
+        padding: 2rem 0;
+    }
+    .main-body{
+        justify-content: center;
+    }
+}
+@media screen and (max-width:590px){
+    .loading{
+        font-size: 7vw;
+    }
+
+    .myimg{
+        height: 90vw;
+    }
+    .header{
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    .header .logo{
+        margin: .5rem 0 1.3rem 0;
+    }
+    .main-body .main-title{
+        font-size: 5rem;
+    }
+    .main-about{
+        margin: 1rem;
+    }
+    .main-about .main-title{
+        font-size: 3rem;
+    }
+    .main-about .main-title .p::first-letter{
+        font-size: 5rem;
+    }
+    .main-about .main-description{
+        margin: .5rem;
+        padding: 0;
+    }
 }

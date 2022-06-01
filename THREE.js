@@ -5,6 +5,8 @@ import * as THREE from "three";
 import './style.css';
 // import * as orbitControls from "three/examples/jsm/controls/OrbitControls";
 import datGui from "dat.gui";
+import RockTexture from "./media/textures/normal texture/rock.jpg";
+import ParticleTexture from "./media/textures/particles/1.png";
 
 /**
  * variables
@@ -58,8 +60,8 @@ window.addEventListener("mousemove", (e) => {
  */
 //texture loader
 const textureLoader = new THREE.TextureLoader();
-const rockTexture = textureLoader.load("media/textures/normal texture/rock.jpg");
-const starTexture = textureLoader.load("media/textures/particles/1.png");
+const rockTexture = textureLoader.load(RockTexture);
+const starTexture = textureLoader.load(ParticleTexture);
 
 /**
  * scene

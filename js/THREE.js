@@ -2,11 +2,11 @@
  * importing files and modules
  */
 import * as THREE from "three";
-import './style.css';
+import '../css/style.css';
 // import * as orbitControls from "three/examples/jsm/controls/OrbitControls";
 import datGui from "dat.gui";
-import RockTexture from "./media/textures/normal texture/rock.jpg";
-import ParticleTexture from "./media/textures/particles/1.png";
+import RockTexture from "../media/textures/normal texture/rock.jpg";
+import ParticleTexture from "../media/textures/particles/1.png";
 
 /**
  * variables

@@ -13,6 +13,7 @@
   "dependencies": {
     "dat.gui": "^0.7.9",
     "gsap": "^3.10.4",
+    "scrollmagic": "^2.0.8",
     "three": "^0.141.0"
   }
 }

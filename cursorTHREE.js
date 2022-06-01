@@ -37,7 +37,6 @@ scene.add(camera);
 
 const renderer = new THREE.WebGLRenderer({ canvas: cursorCanvas });
 renderer.setSize(sizes.width, sizes.height);
-// renderer.setClearColor(0x999999);
 renderer.render(scene, camera);
 
 const clock = new THREE.Clock();

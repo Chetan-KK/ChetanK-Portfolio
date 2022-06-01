@@ -11,6 +11,9 @@
 html{
     overflow:hidden
 }
+body{
+    background-color: black;
+}
 *,*::before,*::after{
     margin: 0;
     padding: 0;

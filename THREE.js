@@ -84,12 +84,14 @@ gui.hide();
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, .5);
 directionalLight.position.set(-10, 4, 4);
+// directionalLight.visible = false;
 scene.add(directionalLight);
 
 gui.add(directionalLight.position, "x").min(-10).max(10).step(0.01);
 
 const directionalLight2 = new THREE.DirectionalLight(0xffffff, .5);
 directionalLight2.position.set(10, 4, 4);
+directionalLight2.visible = false;
 scene.add(directionalLight2);
 
 const pointLight = new THREE.PointLight(0xff0000, .6);

@@ -107,25 +107,26 @@ body {
   backdrop-filter: blur(3px);
   z-index: 99;
 }
-.header .logo p {
+.header .logo a {
   position: relative;
   /* cursor: pointer; */
   letter-spacing: var(--letter-spacing);
   color: var(--secondry-color);
   font-size: 2rem;
+  text-decoration: none;
   transition: var(--transition);
 }
-.header .logo p::first-letter {
+.header .logo a::first-letter {
   color: var(--primary-color);
 }
-.header .logo p:hover::first-letter {
+.header .logo a:hover::first-letter {
   color: var(--secondry-color);
 }
-.header .logo p:hover {
+.header .logo a:hover {
   color: var(--primary-color);
 }
-.header .logo p::before,
-.header .logo p::after {
+.header .logo a::before,
+.header .logo a::after {
   content: "";
   position: absolute;
   width: 30%;
@@ -135,17 +136,17 @@ body {
   background-color: var(--secondry-color);
   transition: var(--transition);
 }
-.header .logo p::before {
+.header .logo a::before {
   right: 0;
   top: -5px;
 }
-.header .logo p::after {
+.header .logo a::after {
   background-color: var(--primary-color);
   left: 0;
   bottom: 0;
 }
-.header .logo p:hover::before,
-.header .logo p:hover::after {
+.header .logo a:hover::before,
+.header .logo a:hover::after {
   width: 120%;
 }
 .header .nav .link {
@@ -358,7 +359,7 @@ body {
   font-family: var(--poppins-font);
   padding: 0.5rem 2rem;
   transition: var(--transition);
-  overflow-y: scroll;
+  overflow: hidden;
 }
 .project-description b {
   text-decoration: underline;
@@ -396,9 +397,45 @@ body {
   .main-body {
     justify-content: center;
   }
-  .main-projects .projects .project .project-image {
+  /* .main-projects .projects .project .project-image {
     width: 60vw;
     height: 10rem;
+  }
+  .project-description {
+    height: 10rem;
+    font-size: 2.5vw;
+  } */
+  .project {
+    margin: 1rem 1.5rem;
+  }
+  .main-projects .projects .project:hover {
+    margin: 1rem 1.5rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .main-projects {
+    background-color: var(--gray);
+    backdrop-filter: blur(5px);
+  }
+  .project {
+    margin: 0;
+  }
+  .project:hover {
+    margin: 0;
+  }
+  .main-projects .projects .project .project-title {
+    font-size: 1.3rem;
+  }
+  .main-projects .projects .project .project-image {
+    width: 60vw;
+    height: 22.6vh;
+  }
+  .project-description {
+    font-size: 2.5vw;
+    line-height: 20px;
+    width: 60vw;
+    height: 22.6vh;
+    top: 4.55rem;
   }
 }
 @media screen and (max-width: 590px) {

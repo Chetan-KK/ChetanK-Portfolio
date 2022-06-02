@@ -294,10 +294,13 @@ body {
   /* width: 40vw; */
   padding: 2vw;
 }
-.main-projects .projects .project {
+.project {
   margin: 0 1.5rem;
   opacity: 0.7;
   transition: var(--transition);
+}
+.projectScroll {
+  opacity: 0;
 }
 .main-projects .projects .project:hover {
   opacity: 1;
@@ -344,7 +347,7 @@ body {
 }
 
 .main-projects .projects .project .project-image {
-  width: 30vw;
+  width: 27rem;
   height: 15rem;
 }
 @media screen and (max-width: 900px) {
@@ -367,6 +370,10 @@ body {
   }
   .main-body {
     justify-content: center;
+  }
+  .main-projects .projects .project .project-image {
+    width: 60vw;
+    height: 10rem;
   }
 }
 @media screen and (max-width: 590px) {

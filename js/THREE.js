@@ -246,8 +246,10 @@ window.addEventListener("resize", () => {
 function alignCamera() {
   if (window.innerWidth < 705) {
     camera.position.set(0, -3, 15);
+    particals.position.set(0, 0, 100);
   }
   else {
+    particals.position.set(0, 0, 0);
     camera.position.set(-5, .5, 15);
   }
 }

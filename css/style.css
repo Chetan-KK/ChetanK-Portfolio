@@ -4,13 +4,15 @@
   --gray: #2424245e;
   --loading-overlay: rgba(0, 0, 0, 0.692);
   --black: black;
-  --transition: 200ms;
+  --transition: 400ms;
   --letter-spacing: 3px;
   --bebas-font: "Bebas Neue", cursive;
   --poppins-font: "Poppins", sans-serif;
 }
 html {
   overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-padding: 12rem;
 }
 body {
   background-color: black;
@@ -306,6 +308,29 @@ body {
   opacity: 1;
   margin: 2rem 4rem;
 }
+.main-projects .projects .project::before,
+.main-projects .projects .project::after {
+  content: "";
+  position: fixed;
+  border-radius: 10px;
+  width: 0%;
+  height: 3px;
+  transition: var(--transition);
+}
+.main-projects .projects .project::before {
+  top: 0;
+  left: 0;
+  background-color: var(--secondry-color);
+}
+.main-projects .projects .project::after {
+  bottom: 1px;
+  right: 0;
+  background-color: var(--primary-color);
+}
+.main-projects .projects .project:hover::before,
+.main-projects .projects .project:hover::after {
+  width: 80%;
+}
 .main-projects .main-title::first-letter {
   color: var(--primary-color);
   font-size: 6.5rem;
@@ -333,7 +358,7 @@ body {
   font-family: var(--poppins-font);
   padding: 0.5rem 2rem;
   transition: var(--transition);
-  overflow: hidden;
+  overflow-y: scroll;
 }
 .project-description b {
   text-decoration: underline;

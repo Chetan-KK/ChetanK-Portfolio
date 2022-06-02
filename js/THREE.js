@@ -157,7 +157,7 @@ particalsGeometary.setAttribute(
 particalsGeometary.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 const particalsMaterial = new THREE.PointsMaterial({ color: 0xffffff });
-particalsMaterial.size = 0.4;
+particalsMaterial.size = 0.6;
 // particalsMaterial.sizeAttenuation = true;
 particalsMaterial.transparent = true;
 particalsMaterial.alphaMap = starTexture;

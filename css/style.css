@@ -81,15 +81,27 @@ body {
     transform: translateX(60rem) rotate(50deg);
   }
 }
-.cursorCanvas {
+.cursorCanvas,
+.cursorCanvasHoverOnLink {
   pointer-events: none;
   position: fixed;
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0 0 -10px var(--primary-color);
   z-index: 99999;
-  transition: opacity var(--transition);
+  transition: opacity var(--transition), transform var(--transition),
+    box-shadow var(--transition);
+}
+.cursorCanvas {
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0 0 -10px var(--primary-color);
+}
+.cursorCanvasHoverOnLink {
+  transform: translate(-50%, -50%) scale(2);
+  box-shadow: 0 0 10px var(--primary-color);
+  opacity: 0.4;
 }
 .myCanvas {
   top: 0;

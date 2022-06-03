@@ -140,15 +140,25 @@ scene.add(secondGroup);
  * stars
  */
 const particalsGeometary = new THREE.BufferGeometry();
-const count = 2000;
+const count = 10000;
 
 const positions = new Float32Array(count * 3);
 const colors = new Float32Array(count * 3);
 
-for (let i = 0; i < count * 3; i++) {
+for (let i = 0; i < count; i++) {
+
   positions[i] = (Math.random() - 0.5) * 50;
+  positions[i + 1] = (Math.random() - 0.5) * 50;
+  positions[i + 2] = (Math.random() - 0.5) * 50;
+
   colors[i] = Math.random();
+  colors[i + 1] = 0;
+  colors[i + 2] = 0;
+  i++;
+  i++;
 }
+
+console.log(positions);
 particalsGeometary.setAttribute(
   "position",
   new THREE.BufferAttribute(positions, 3)

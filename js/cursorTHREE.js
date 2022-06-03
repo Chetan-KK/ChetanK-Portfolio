@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import RockTexture from "../media/textures/normal texture/rock.jpg";
 
-const cursorCanvas = document.querySelector(".cursorCanvas");
+const cursorCanvas = document.querySelector("#cursorCanvasID");
 
 
 window.addEventListener("mousemove", (e) => {
@@ -67,11 +67,13 @@ let respondLinks = document.querySelectorAll(".cursorRespondLink");
 
 respondLinks.forEach(link => {
     link.addEventListener("mouseover", () => {
-        let cursorCanvas = document.getElementById("cursorCanvas");
-        cursorCanvas.style.opacity = .4;
+        let cursorCanvas = document.getElementById("cursorCanvasID");
+        cursorCanvas.classList.add("cursorCanvasHoverOnLink");
+        cursorCanvas.classList.remove("cursorCanvas");
     });
     link.addEventListener("mouseleave", () => {
-        let cursorCanvas = document.getElementById("cursorCanvas");
-        cursorCanvas.style.opacity = 1;
+        let cursorCanvas = document.getElementById("cursorCanvasID");
+        cursorCanvas.classList.remove("cursorCanvasHoverOnLink");
+        cursorCanvas.classList.add("cursorCanvas");
     });
 });

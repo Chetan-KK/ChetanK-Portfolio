@@ -25,7 +25,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* cursor: none; */
+  cursor: none;
 }
 ::-webkit-scrollbar {
   width: 2px;
@@ -468,8 +468,8 @@ body {
     line-height: 20px;
     width: 60vw;
     height: 22.6vh;
-    /* top: 4.55rem; */
-    bottom: 1000px;
+    top: 4.55rem;
+    /* bottom: 1000px; */
   }
 }
 @media screen and (max-width: 590px) {

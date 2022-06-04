@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-function loaded() {
+export function loaded() {
     gsap.to(".loading", { y: "-100%", duration: 1, delay: 2 });
     gsap.to("html", { overflowY: "scroll", duration: 0, delay: 6 });
     gsap.from(".header", { y: "-150%", duration: .5, delay: 2.5 });
@@ -9,4 +9,3 @@ function loaded() {
     gsap.from(".main-title", { y: "-50%", opacity: 0, duration: 1, delay: 4 });
     gsap.from(".main-body .main-description", { y: "200%", opacity: 0, duration: 1, delay: 4 });
 }
-loaded();

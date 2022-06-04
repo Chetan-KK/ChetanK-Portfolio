@@ -2,7 +2,6 @@
   --primary-color: red;
   --secondry-color: white;
   --blurBgColor: hsla(0, 0%, 14%, 0.369);
-  --hoverButton: rgba(255, 0, 0, 0.397);
   --textBg: rgba(0, 0, 0, 0.767);
   --loading-overlay: rgba(0, 0, 0, 0.692);
   --black: black;
@@ -81,6 +80,47 @@ body {
     transform: translateX(60rem) rotate(50deg);
   }
 }
+/* .colorPicker {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 999;
+  flex-direction: column;
+  color: var(--secondry-color);
+}
+.colorPicker .main-title {
+  font-size: 4rem;
+  margin: 2rem 0;
+}
+.colorPicker .color {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 1rem;
+  background-color: white;
+  transition: var(--transition);
+}
+.colorPicker .color:hover {
+  transform: scale(1.2);
+}
+.colorPicker .colorRed {
+  background-color: #ff0000;
+}
+
+.colorPicker .colorCyan {
+  background-color: #00ffff;
+}
+
+.colorPicker .colorYellow {
+  background-color: #ffff00;
+}
+
+.colorPicker .colorPurple {
+  background-color: #ff00ff;
+} */
 .cursorCanvas,
 .cursorCanvasHoverOnLink {
   pointer-events: none;
@@ -427,7 +467,8 @@ body {
 }
 .main-contact .form #send:hover {
   padding: 0.5rem 3rem;
-  background-color: var(--hoverButton);
+  opacity: 0.7;
+  background-color: var(--primary-color);
 }
 @media screen and (max-width: 900px) {
   .main-about .main-description {

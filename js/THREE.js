@@ -8,6 +8,7 @@ import datGui from "dat.gui";
 import RockTexture from "../media/textures/normal texture/rock.jpg";
 import ParticleTexture from "../media/textures/particles/1.png";
 import gsap from "gsap";
+import { loaded } from "./gsap";
 
 /**
  * variables
@@ -60,7 +61,14 @@ window.addEventListener("mousemove", (e) => {
  * loaders
  */
 //texture loader
-const textureLoader = new THREE.TextureLoader();
+const loadingManager = new THREE.LoadingManager(
+  () => {
+    loaded();
+  }
+);
+
+
+const textureLoader = new THREE.TextureLoader(loadingManager);
 const rockTexture = textureLoader.load(RockTexture);
 const starTexture = textureLoader.load(ParticleTexture);
 

@@ -24,7 +24,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
 }
 ::-webkit-scrollbar {
   width: 2px;
@@ -38,6 +37,19 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+.pleaseUsePc {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--black);
+  color: var(--secondry-color);
+  top: 0;
+  font-family: var(--poppins-font);
+  font-size: 1.5rem;
+  left: 0;
+  z-index: 99999999;
 }
 .loading {
   overflow: hidden;
@@ -177,6 +189,7 @@ body {
   color: var(--secondry-color);
 }
 .header .logo a:hover {
+  text-shadow: 0 0 30px var(--primary-color);
   color: var(--primary-color);
 }
 .header .logo a::before,
@@ -247,6 +260,7 @@ body {
   letter-spacing: 10px;
 }
 .main-title {
+  text-shadow: 0 0 60px var(--primary-color);
   color: var(--secondry-color);
   font-family: var(--bebas-font);
   font-size: 5rem;
@@ -342,6 +356,10 @@ body {
 .myimg {
   height: 40rem;
   border-radius: 20px;
+  transition: var(--transition);
+}
+.myimg:hover {
+  box-shadow: 0 0 60px -5px var(--primary-color);
 }
 .main-projects {
   margin: 0 10vw;
@@ -458,19 +476,29 @@ body {
 .main-contact .form form textarea:hover,
 .main-contact .form form input:focus,
 .main-contact .form form textarea:focus {
+  box-shadow: 0 0 60px -5px var(--primary-color);
   outline: none;
   width: 75vw;
   backdrop-filter: blur(15px);
 }
 .main-contact .form #send {
   width: auto;
+  box-shadow: 0 0 20px -5px var(--primary-color);
 }
 .main-contact .form #send:hover {
   padding: 0.5rem 3rem;
   opacity: 0.7;
+  box-shadow: 0 0 40px -5px var(--primary-color);
   background-color: var(--primary-color);
 }
 @media screen and (max-width: 900px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  .pleaseUsePc {
+    display: flex;
+    text-align: center;
+  }
   .main-about .main-description {
     width: auto;
     height: auto;

@@ -40,6 +40,6 @@ Tilt.init(about, {
 Tilt.init(input, {
     reverse: true,
     speed: 700,
-    reset: false,
+    reset: true,
     max: 10,
 });

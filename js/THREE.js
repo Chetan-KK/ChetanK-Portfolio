@@ -9,10 +9,15 @@ import RockTexture from "../media/textures/normal texture/rock.jpg";
 import ParticleTexture from "../media/textures/particles/1.png";
 import gsap from "gsap";
 import { loaded } from "./gsap";
+import { Clock } from "three";
 
 /**
  * variables
  */
+
+//clock
+const clock = new THREE.Clock();
+
 const sizes = {
   width: window.innerWidth,
   height: window.innerHeight
@@ -52,9 +57,9 @@ window.addEventListener("mousemove", (e) => {
   box1.rotation.set(y, x, 10);
   box2.rotation.set(y, x, 10);
 
-  particals.rotation.set(y / 30, x / 30, 10);
+  particals.rotation.set(-y / 10, -x / 10, 10);
 
-  pointLight.position.set(x, y, 3);
+  // pointLight.position.set(x, y, 3);
 });
 
 /**
@@ -88,7 +93,7 @@ gui.hide();
 /**
  * lights
  */
-// const ambientLight = new THREE.AmbientLight(0xffffff, .1);
+// const ambientLight = new THREE.AmbientLight(0xffff00, 1);
 // scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, .5);
@@ -105,6 +110,7 @@ scene.add(directionalLight2);
 
 const pointLight = new THREE.PointLight(0xff0000, .6);
 pointLight.position.set(3, 3, 3);
+// pointLight.visible = false;
 scene.add(pointLight);
 
 gui.add(pointLight, "intensity").name("point light intensity").min(0).max(5).step(0.02);
@@ -144,11 +150,38 @@ secondGroup.add(box2);
 
 scene.add(secondGroup);
 
+//stars
+
+// let starsCount = 30;
+
+// const starsMaterial = new THREE.MeshStandardMaterial({
+//   roughness: .6,
+//   metalness: 1,
+//   normalMap: rockTexture
+// });
+
+// for (let i = 0; i < starsCount; i++) {
+//   const starSize = (Math.random() + .5) * Math.random();
+
+
+//   const starsGeometry = new THREE.TorusKnotGeometry(starSize, 1.2, 23, 6, 9, 9);
+//   const Stars = new THREE.Mesh(starsGeometry, starsMaterial);
+
+//   const positionX = (Math.random() - 0.5) * 50;
+//   const positionY = (Math.random() - 0.5) * 50;
+//   const positionZ = (Math.random() - 0.5) * 50;
+
+
+
+//   Stars.position.set(positionX, positionY, positionZ);
+//   scene.add(Stars);
+// }
+
 /**
- * stars
+ * particles
  */
 const particalsGeometary = new THREE.BufferGeometry();
-const count = 10000;
+const count = 5000;
 
 const positions = new Float32Array(count * 3);
 const colors = new Float32Array(count * 3);
@@ -160,13 +193,11 @@ for (let i = 0; i < count; i++) {
   positions[i + 2] = (Math.random() - 0.5) * 50;
 
   colors[i] = Math.random();
-  colors[i + 1] = 0;
-  colors[i + 2] = 0;
+  colors[i + 1] = Math.random();
+  colors[i + 2] = Math.random();
   i++;
   i++;
 }
-
-console.log(positions);
 particalsGeometary.setAttribute(
   "position",
   new THREE.BufferAttribute(positions, 3)
@@ -175,8 +206,8 @@ particalsGeometary.setAttribute(
 particalsGeometary.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 const particalsMaterial = new THREE.PointsMaterial({ color: 0xffffff });
-particalsMaterial.size = 0.6;
-// particalsMaterial.sizeAttenuation = true;
+particalsMaterial.size = .5;
+particalsMaterial.sizeAttenuation = true;
 particalsMaterial.transparent = true;
 particalsMaterial.alphaMap = starTexture;
 particalsMaterial.alphaTest = 0.001; //or
@@ -206,14 +237,13 @@ scene.add(camera);
  */
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(sizes.width, sizes.height);
-// renderer.setClearColor(0x999999);
+// renderer.setClearColor(0xffffff);
 renderer.render(scene, camera);
 
 /**
  * tick function
  */
-//clock
-const clock = new THREE.Clock();
+
 
 const tick = () => {
   //request frame
@@ -229,7 +259,8 @@ const tick = () => {
   const secondGroupAnimationTime = (elapsedTime) / 3;
   secondGroup.rotation.set(secondGroupAnimationTime, secondGroupAnimationTime, 0);
 
-  particals.rotation.z = elapsedTime / 20;
+  particals.rotation.z = elapsedTime / 10;
+  // particals.rotation.y = elapsedTime / 20;
 
   //update controls
   // controls.update();

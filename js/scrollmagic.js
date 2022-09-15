@@ -5,5 +5,5 @@ const controller = new ScrollMagic.Controller();
 
 new ScrollMagic.Scene({
     triggerElement: ".main-about",
-    offset: -200
+    offset: -400
 }).setClassToggle(".main-about", "fade-in").addTo(controller);

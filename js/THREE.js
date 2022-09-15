@@ -51,13 +51,18 @@ window.addEventListener("mousemove", (e) => {
 
   // camera.position.set(-x, y, 10);
 
-  torus.rotation.set(y, x, 10);
-  box.rotation.set(-y, -x, 10);
+  if (window.innerWidth > 705) {
 
-  box1.rotation.set(y, x, 10);
-  box2.rotation.set(y, x, 10);
+    torus.rotation.set(y, x, 10);
+    box.rotation.set(-y, -x, 10);
 
-  particals.rotation.set(-y / 10, -x / 10, 10);
+    box1.rotation.set(y, x, 10);
+    box2.rotation.set(y, x, 10);
+
+    particals.rotation.set(-y / 10, -x / 10, 10);
+
+  }
+
 
   // pointLight.position.set(x, y, 3);
 });
@@ -296,6 +301,7 @@ function alignCamera() {
   if (window.innerWidth < 705) {
     camera.position.set(0, -3, 15);
     particals.position.set(0, 0, 100);
+
   }
   else {
     particals.position.set(0, 0, 0);

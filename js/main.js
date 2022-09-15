@@ -4,8 +4,10 @@ window.addEventListener('scroll', () => {
     if (window.innerWidth < 705) {
         if (window.scrollY > 100) {
             logo.style.fontSize = '1rem';
+            // logo.style.margin = '0 !important';
         } else {
             logo.style.fontSize = '2rem';
+            // logo.style.margin = '0.5rem 0 1.3rem 0';
         }
     }
 });

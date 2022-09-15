@@ -10,26 +10,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // //loading
 
 

@@ -5,7 +5,7 @@ import * as THREE from "three";
 import '../css/style.css';
 // import * as orbitControls from "three/examples/jsm/controls/OrbitControls";
 import datGui from "dat.gui";
-import RockTexture from "../media/textures/normal texture/rock.jpg";
+import RockTexture from "../media/textures/normal texture/rock.png";
 import ParticleTexture from "../media/textures/particles/1.png";
 import gsap from "gsap";
 import { loaded } from "./gsap";

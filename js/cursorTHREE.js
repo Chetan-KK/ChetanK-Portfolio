@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import RockTexture from "../media/textures/normal texture/rock.jpg";
+import RockTexture from "../media/textures/normal texture/rock.png";
 
 const cursorCanvas = document.querySelector("#cursorCanvasID");
 

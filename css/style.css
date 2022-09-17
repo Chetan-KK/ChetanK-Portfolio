@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #ff0000;
+  --primary-color: red;
   --secondry-color: white;
   --blurBgColor: hsla(0, 0%, 14%, 0.369);
   --textBg: rgba(0, 0, 0, 0.767);
@@ -523,10 +523,6 @@ body {
   ::-webkit-scrollbar {
     width: 0px;
   }
-  /* .pleaseUsePc {
-    display: flex;
-    text-align: center;
-  } */
   .main-about .main-description {
     width: auto;
     height: auto;
@@ -589,7 +585,7 @@ body {
     width: 100vw;
   }
   .loading {
-    font-size: 7vw;
+    font-size: 12vw;
   }
 
   .myimg {
@@ -607,13 +603,14 @@ body {
     margin: 0.5rem 0 1.3rem 0;
   }
   .main-body {
-    height: 47vh;
-    padding-top: 2rem;
+    height: fit-content;
+    /* padding-top: 2rem; */
     padding: 1rem;
     align-items: flex-end;
   }
 
   .main-body .left {
+    padding-top: 10rem;
     letter-spacing: 5px;
   }
   .main-body .main-title {
@@ -681,5 +678,14 @@ body {
   .main-contact .form form input:focus,
   .main-contact .form form textarea:focus {
     width: 95vw;
+  }
+  .project-description .main-link {
+    font-size: 4vw;
+  }
+}
+@media screen and (max-width: 350px) {
+  .pleaseUsePc {
+    display: flex;
+    text-align: center;
   }
 }

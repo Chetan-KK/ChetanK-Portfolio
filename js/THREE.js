@@ -127,7 +127,8 @@ gui.add(pointLight, "intensity").name("point light intensity").min(0).max(5).ste
 const material = new THREE.MeshStandardMaterial({
   roughness: .6,
   metalness: 1,
-  normalMap: rockTexture
+  normalMap: rockTexture,
+  // wireframe: true
 });
 
 gui.add(material, "roughness").min(-1).max(2).name("roughness").step(.01);
@@ -135,7 +136,7 @@ gui.add(material, "metalness").min(1).max(3).name("metalness").step(.01);
 
 //first group
 const firstGroup = new THREE.Group();
-const torus = new THREE.Mesh(new THREE.TorusBufferGeometry(2, 1, 32, 100), material);
+const torus = new THREE.Mesh(new THREE.TorusBufferGeometry(2, 1, 32, 50), material);
 firstGroup.add(torus);
 
 const box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1, 1, 1, 1), material);
@@ -186,7 +187,7 @@ scene.add(secondGroup);
  * particles
  */
 const particalsGeometary = new THREE.BufferGeometry();
-const count = 5000;
+const count = 2000;
 
 const positions = new Float32Array(count * 3);
 const colors = new Float32Array(count * 3);
@@ -211,7 +212,7 @@ particalsGeometary.setAttribute(
 particalsGeometary.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 const particalsMaterial = new THREE.PointsMaterial({ color: 0xffffff });
-particalsMaterial.size = .5;
+particalsMaterial.size = .8;
 particalsMaterial.sizeAttenuation = true;
 particalsMaterial.transparent = true;
 particalsMaterial.alphaMap = starTexture;

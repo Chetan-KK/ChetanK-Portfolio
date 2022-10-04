@@ -42,7 +42,7 @@ scene.add(sphere);
 
 
 const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height);
-camera.position.set(0, 0, 2.6);
+camera.position.set(0, 0, 3.6);
 scene.add(camera);
 
 const renderer = new THREE.WebGLRenderer({

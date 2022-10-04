@@ -1,3 +1,11 @@
+@font-face {
+  font-family: BebasNeue;
+  src: url(../media/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+@font-face {
+  font-family: Oswald;
+  src: url(../media/fonts/Oswald/Oswald-Regular.ttf);
+}
 :root {
   --primary-color: red;
   --secondry-color: white;
@@ -7,8 +15,8 @@
   --black: black;
   --transition: 400ms;
   --letter-spacing: 3px;
-  --bebas-font: "Bebas Neue", cursive;
-  --oswald-font: "Oswald", sans-seri;
+  --bebas-font: BebasNeue, cursive;
+  --oswald-font: Oswald, sans-seri;
 }
 html {
   overflow: hidden;
@@ -338,12 +346,8 @@ body {
   box-shadow: 0 0 60px -5px var(--primary-color);
 }
 .main-projects {
-  margin: 0 10vw;
+  margin: 0 5rem;
   flex-direction: column;
-}
-.main-projects .projects {
-  /* width: 40vw; */
-  padding: 2vw;
 }
 .project {
   margin: 0 0.6rem;
@@ -443,13 +447,13 @@ body {
 .main-contact .form form textarea {
   position: relative;
   margin: 1rem 0;
-  padding: 0.5rem 2rem;
+  padding: 0.3rem 0.7rem;
   width: 70vw;
   background-color: var(--blurBgColor);
   backdrop-filter: blur(8px);
   font-family: var(--oswald-font);
   letter-spacing: var(--letter-spacing);
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: var(--secondry-color);
   border: none;
   transition: var(--transition);
@@ -462,62 +466,50 @@ body {
 .main-contact .form form textarea:focus {
   box-shadow: 0 0 60px -5px var(--primary-color);
   outline: none;
-  width: 75vw;
   backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--primary-color);
 }
 .main-contact .form #send {
   width: auto;
+  padding: 0.3rem 2rem;
   box-shadow: 0 0 20px -5px var(--primary-color);
 }
 .main-contact .form #send:hover {
-  padding: 0.5rem 3rem;
+  padding: 0.3rem 3rem;
   opacity: 0.7;
   box-shadow: 0 0 40px -5px var(--primary-color);
   background-color: var(--primary-color);
 }
-.social-links {
-  padding: 2rem 0;
+.main-footer {
+  justify-content: space-between;
+  padding: 0.7rem 1.3rem;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 30px var(--primary-color);
+  opacity: 0.7;
   position: relative;
 }
-.social-links::before,
-.social-links::after {
-  content: "";
-  position: absolute;
-  width: 20%;
-  height: 5px;
-  border-radius: 10px;
-  background-color: var(--secondry-color);
-  box-shadow: 0 0 20px 0px var(--secondry-color);
-  transition: var(--transition);
-}
-.social-links::before {
-  top: 0;
-}
-.social-links::after {
-  bottom: 0;
-  /* right: 5%; */
-}
-
-.social-links:hover::before {
-  transform: translateX(-200px);
-}
-
-.social-links:hover::after {
-  transform: translateX(200px);
-}
-
-.social-links a {
-  margin: 1rem 2rem;
-  font-size: 2rem;
+.main-footer .copyright {
+  font-size: 1.5rem;
   color: var(--secondry-color);
-  text-shadow: 0 0 30px var(--primary-color);
+  font-family: var(--bebas-font);
+}
+.main-footer .copyright .main-link a {
+  font-family: var(--oswald-font);
+}
+.main-footer .copyright .main-link a::first-letter {
+  color: white;
+}
+.main-footer .copyright .main-link a:hover {
+  color: white;
+}
+.social-links a {
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  color: var(--secondry-color);
   transition: var(--transition);
 }
 .social-links a:hover {
-  color: var(--primary-color);
-  text-shadow: 0 0 30px var(--secondry-color);
-  transform: scale(1.4) translateY(-1rem);
+  color: var(--black);
 }
 @media screen and (max-width: 900px) {
   ::-webkit-scrollbar {
@@ -534,6 +526,13 @@ body {
   .main-about::after {
     left: 30px;
     top: 20px;
+  }
+  .main-footer {
+    justify-content: center;
+    text-align: center;
+  }
+  .main-footer .copyright {
+    margin-bottom: 1rem;
   }
 }
 @media screen and (max-width: 710px) {
@@ -578,6 +577,11 @@ body {
   }
 }
 @media screen and (max-width: 590px) {
+  *,
+  *::before,
+  *::after {
+    cursor: default;
+  }
   .cursorCanvas {
     display: none;
   }

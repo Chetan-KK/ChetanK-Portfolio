@@ -1,11 +1,4 @@
-@font-face {
-  font-family: BebasNeue;
-  src: url(../media/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
-}
-@font-face {
-  font-family: Oswald;
-  src: url(../media/fonts/Oswald/Oswald-Regular.ttf);
-}
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap");
 :root {
   --primary-color: red;
   --secondry-color: white;
@@ -15,8 +8,8 @@
   --black: black;
   --transition: 400ms;
   --letter-spacing: 3px;
-  --bebas-font: BebasNeue, cursive;
-  --oswald-font: Oswald, sans-seri;
+  --bebas-font: "Bebas Neue", cursive;
+  --oswald-font: "Oswald", sans-serif;
 }
 html {
   overflow: hidden;
@@ -330,7 +323,7 @@ body {
 }
 .main-about .main-description p::first-letter {
   color: var(--primary-color);
-  font-size: 5rem;
+  font-size: 3rem;
   line-height: 0;
 }
 .myself {

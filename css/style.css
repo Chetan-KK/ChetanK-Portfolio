@@ -326,6 +326,31 @@ body {
   font-size: 3rem;
   line-height: 0;
 }
+.main-about #button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  background-color: var(--blurBgColor);
+  backdrop-filter: blur(8px);
+  font-family: var(--bebas-font);
+  letter-spacing: var(--letter-spacing);
+  font-size: 1.3rem;
+  width: fit-content;
+  transition: var(--transition);
+  text-decoration: none;
+}
+#button {
+  width: auto;
+  padding: 0.3rem 2rem;
+  box-shadow: 0 0 20px -5px var(--primary-color);
+  margin: 1rem 0;
+}
+#button:hover {
+  padding: 0.3rem 3rem;
+  opacity: 0.7;
+  box-shadow: 0 0 40px -5px var(--primary-color);
+  background-color: var(--primary-color);
+}
 .myself {
   justify-content: space-around;
   width: 100%;
@@ -462,17 +487,7 @@ body {
   backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--primary-color);
 }
-.main-contact .form #send {
-  width: auto;
-  padding: 0.3rem 2rem;
-  box-shadow: 0 0 20px -5px var(--primary-color);
-}
-.main-contact .form #send:hover {
-  padding: 0.3rem 3rem;
-  opacity: 0.7;
-  box-shadow: 0 0 40px -5px var(--primary-color);
-  background-color: var(--primary-color);
-}
+
 .main-footer {
   justify-content: space-between;
   padding: 0.7rem 1.3rem;

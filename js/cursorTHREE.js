@@ -80,16 +80,9 @@ let respondLinks = document.querySelectorAll(".cursorRespondLink");
 
 respondLinks.forEach(link => {
     link.addEventListener("mouseover", () => {
-        // let cursorCanvas = document.getElementById("cursorCanvasID");
-        // cursorCanvas.classList.add("cursorCanvasHoverOnLink");
-        // cursorCanvas.classList.remove("cursorCanvas");
-        // sphere.
         sphere.material.wireframe = true;
     });
     link.addEventListener("mouseleave", () => {
-        // let cursorCanvas = document.getElementById("cursorCanvasID");
-        // cursorCanvas.classList.remove("cursorCanvasHoverOnLink");
-        // cursorCanvas.classList.add("cursorCanvas");
         sphere.material.wireframe = false;
 
     });

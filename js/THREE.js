@@ -9,7 +9,9 @@ import RockTexture from "../media/textures/normal texture/rock.png";
 import ParticleTexture from "../media/textures/particles/1.png";
 import gsap from "gsap";
 import { loaded } from "./gsap";
-import { Clock } from "three";
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
+import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass';
 
 /**
  * variables
@@ -39,6 +41,11 @@ window.addEventListener("resize", () => {
   //update renderer
   renderer.setSize(sizes.width, sizes.height);
   renderer.render(scene, camera);
+
+
+  effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  effectComposer.setSize(sizes.width, sizes.height);
+
 });
 
 /**
@@ -98,12 +105,9 @@ gui.hide();
 /**
  * lights
  */
-// const ambientLight = new THREE.AmbientLight(0xffff00, 1);
-// scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, .5);
 directionalLight.position.set(-10, 4, 4);
-// directionalLight.visible = false;
 scene.add(directionalLight);
 
 gui.add(directionalLight.position, "x").min(-10).max(10).step(0.01);
@@ -115,7 +119,6 @@ scene.add(directionalLight2);
 
 const pointLight = new THREE.PointLight(0xff0000, .6);
 pointLight.position.set(3, 3, 3);
-// pointLight.visible = false;
 scene.add(pointLight);
 
 gui.add(pointLight, "intensity").name("point light intensity").min(0).max(5).step(0.02);
@@ -124,15 +127,14 @@ gui.add(pointLight, "intensity").name("point light intensity").min(0).max(5).ste
  * objects
  */
 //material
-const material = new THREE.MeshStandardMaterial({
+let material = new THREE.MeshStandardMaterial({
   roughness: .6,
   metalness: 1,
   normalMap: rockTexture,
-  // wireframe: true
 });
 
-gui.add(material, "roughness").min(-1).max(2).name("roughness").step(.01);
-gui.add(material, "metalness").min(1).max(3).name("metalness").step(.01);
+// gui.add(material, "roughness").min(-1).max(2).name("roughness").step(.01);
+// gui.add(material, "metalness").min(1).max(3).name("metalness").step(.01);
 
 //first group
 const firstGroup = new THREE.Group();
@@ -155,33 +157,6 @@ box2.position.set(-5, 0, 0);
 secondGroup.add(box2);
 
 scene.add(secondGroup);
-
-//stars
-
-// let starsCount = 30;
-
-// const starsMaterial = new THREE.MeshStandardMaterial({
-//   roughness: .6,
-//   metalness: 1,
-//   normalMap: rockTexture
-// });
-
-// for (let i = 0; i < starsCount; i++) {
-//   const starSize = (Math.random() + .5) * Math.random();
-
-
-//   const starsGeometry = new THREE.TorusKnotGeometry(starSize, 1.2, 23, 6, 9, 9);
-//   const Stars = new THREE.Mesh(starsGeometry, starsMaterial);
-
-//   const positionX = (Math.random() - 0.5) * 50;
-//   const positionY = (Math.random() - 0.5) * 50;
-//   const positionZ = (Math.random() - 0.5) * 50;
-
-
-
-//   Stars.position.set(positionX, positionY, positionZ);
-//   scene.add(Stars);
-// }
 
 /**
  * particles
@@ -212,12 +187,11 @@ particalsGeometary.setAttribute(
 particalsGeometary.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 const particalsMaterial = new THREE.PointsMaterial({ color: 0xffffff });
-particalsMaterial.size = .8;
+particalsMaterial.size = 1;
 particalsMaterial.sizeAttenuation = true;
 particalsMaterial.transparent = true;
 particalsMaterial.alphaMap = starTexture;
-particalsMaterial.alphaTest = 0.001; //or
-// particalsMaterial.depthTest = false; //problems with other obj
+particalsMaterial.alphaTest = 0.001;
 particalsMaterial.depthWrite = false;
 particalsMaterial.blending = THREE.AdditiveBlending;
 particalsMaterial.vertexColors = true;
@@ -241,16 +215,29 @@ scene.add(camera);
 /**
  * renderer
  */
-const renderer = new THREE.WebGLRenderer({ canvas });
+const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
 renderer.setSize(sizes.width, sizes.height);
-// renderer.setClearColor(0xffffff);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.render(scene, camera);
+
+/**
+ * post processing
+ */
+const effectComposer = new EffectComposer(renderer);
+effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+effectComposer.setSize(sizes.width, sizes.height);
+
+const renderPass = new RenderPass(scene, camera);
+effectComposer.addPass(renderPass);
+
+const glitchPass = new GlitchPass();
+glitchPass.enabled = false;
+effectComposer.addPass(glitchPass);
+
 
 /**
  * tick function
  */
-
-
 const tick = () => {
   //request frame
   window.requestAnimationFrame(tick);
@@ -259,37 +246,49 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   //animations
-  torus.rotation.z = elapsedTime / 1.5;
-  box.rotation.z = -elapsedTime;
+  torus.position.z = window.scrollY / 200;
+  box.position.z = window.scrollY / 200;
 
-  const secondGroupAnimationTime = (elapsedTime) / 3;
-  secondGroup.rotation.set(secondGroupAnimationTime, secondGroupAnimationTime, 0);
+  secondGroup.position.z = window.scrollY / 200;
+  if (window.innerWidth > 705) {
+    torus.rotation.z = elapsedTime / 1.5;
+    box.rotation.z = -elapsedTime;
 
-  particals.rotation.z = elapsedTime / 10;
+    torus.position.x = -window.scrollY / 200;
+
+    const secondGroupAnimationTime = (elapsedTime) / 3;
+    secondGroup.rotation.set(secondGroupAnimationTime, secondGroupAnimationTime, 0);
+
+    particals.rotation.z = elapsedTime / 10;
+  } else {
+    torus.position.y = -window.scrollY / 400;
+    torus.rotation.z = elapsedTime / 1.5;
+  }
+
   // particals.rotation.y = elapsedTime / 20;
 
   //update controls
   // controls.update();
 
   //render
-  renderer.render(scene, camera);
+  // renderer.render(scene, camera);
+  effectComposer.render();
 };
 tick();
 
-gsap.from(camera.position, {
-  duration: 4,
-  x: -5,
-  y: .5,
-  z: 50,
-  delay: 3.5
-});
-gsap.from(camera.rotation, {
-  duration: 3,
-  x: 0,
-  y: 3,
-  z: 0,
-  delay: 3.5
-});
+
+/**
+ * gsap animation
+ */
+function gsapAnim() {
+  gsap.from(camera.rotation, {
+    duration: 3,
+    x: 0,
+    y: 3,
+    z: 0,
+    delay: 2.5
+  });
+}
 
 /**
  * responsive
@@ -301,12 +300,12 @@ window.addEventListener("resize", () => {
 function alignCamera() {
   if (window.innerWidth < 705) {
     camera.position.set(0, -3, 15);
-    // particals.position.set(0, 0, 100);
 
   }
   else {
     particals.position.set(0, 0, 0);
     camera.position.set(-5, .5, 15);
+    gsapAnim();
   }
 }
 alignCamera();

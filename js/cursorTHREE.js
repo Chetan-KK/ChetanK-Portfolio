@@ -81,9 +81,10 @@ let respondLinks = document.querySelectorAll(".cursorRespondLink");
 respondLinks.forEach(link => {
     link.addEventListener("mouseover", () => {
         sphere.material.wireframe = true;
+        sphere.position.z = -2;
     });
     link.addEventListener("mouseleave", () => {
         sphere.material.wireframe = false;
-
+        sphere.position.z = 0;
     });
 });

@@ -2,15 +2,28 @@
 :root {
   --primary-color: red;
   --secondry-color: white;
-  --blurBgColor: hsla(0, 0%, 14%, 0.369);
-  --textBg: rgba(0, 0, 0, 0.767);
+  --blurBgColor: hsla(0, 0%, 100%, 0.082);
+  --textBg: rgba(20, 20, 20, 0.767);
   --loading-overlay: rgba(0, 0, 0, 0.692);
-  --black: black;
+  --black: rgb(20, 20, 20);
   --transition: 400ms;
   --letter-spacing: 3px;
   --bebas-font: "Bebas Neue", cursive;
   --oswald-font: "Oswald", sans-serif;
 }
+/* :root {
+  --primary-color: rgb(206, 0, 0);
+  --secondry-color: rgb(0, 0, 0);
+  --blurBgColor: hsla(0, 0%, 100%, 0.082);
+  --text-color: white;
+  --textBg: rgba(255, 255, 255, 0.767);
+  --loading-overlay: rgba(255, 255, 255, 0.39);
+  --black: rgb(255, 255, 255);
+  --transition: 400ms;
+  --letter-spacing: 3px;
+  --bebas-font: "Bebas Neue", cursive;
+  --oswald-font: "Oswald", sans-serif;
+} */
 html {
   overflow: hidden;
   scroll-behavior: smooth;
@@ -55,7 +68,7 @@ body {
   font-family: var(--oswald-font);
   font-size: 1.5rem;
   left: 0;
-  z-index: 99999999;
+  z-index: 99999999999999999;
 }
 .loading {
   overflow: hidden;
@@ -64,7 +77,7 @@ body {
   transition: height 1s;
   position: fixed;
   background-color: var(--black);
-  z-index: 9999;
+  z-index: 9999999999999999;
   font-size: 6rem;
   font-family: var(--bebas-font);
   color: var(--secondry-color);
@@ -101,7 +114,7 @@ body {
 .loading2 {
   background-color: var(--primary-color);
   position: fixed;
-  z-index: 999;
+  z-index: 9999999999;
   top: 0;
   left: 0;
   width: 100vw;
@@ -116,27 +129,17 @@ body {
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(1);
   box-shadow: 0 0 -10px var(--primary-color);
-  z-index: 99999;
+  z-index: 9999999;
   transition: opacity var(--transition), transform var(--transition),
     box-shadow var(--transition);
 }
-/*this is old cursor change on hover on any link*/
-
-/* .cursorCanvas {
-  transform: translate(-50%, -50%) scale(1);
-  box-shadow: 0 0 -10px var(--primary-color);
-}
-.cursorCanvasHoverOnLink {
-  transform: translate(-50%, -50%) scale(2);
-  box-shadow: 0 0 10px var(--primary-color);
-  opacity: 0.4;
-} */
 .myCanvas {
   top: 0;
-  left: 0;
+  left: 0%;
   width: 100vw;
   height: 100vh;
   position: fixed;
+  z-index: -9;
 }
 .header {
   width: 100%;
@@ -202,6 +205,7 @@ body {
   text-decoration: none;
   transition: var(--transition);
   letter-spacing: var(--letter-spacing);
+  transform: scale(2);
 }
 .main-link::first-letter {
   color: var(--primary-color);
@@ -216,7 +220,7 @@ body {
 .main-link a::before {
   content: "";
   position: absolute;
-  width: 0%;
+  width: 30%;
   bottom: 0;
   right: 0;
   height: 2px;
@@ -236,11 +240,28 @@ body {
   flex-direction: column;
   letter-spacing: 10px;
 }
+
+.animBox {
+  position: relative;
+}
+.animBox::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+  background-color: var(--secondry-color);
+}
+.main-body .main-title {
+  z-index: 999;
+}
 .main-title {
   text-shadow: 0 0 60px var(--primary-color);
   color: var(--secondry-color);
   font-family: var(--bebas-font);
   font-size: 3.5rem;
+  z-index: -99;
 }
 .main-title .p::first-letter {
   color: var(--primary-color);
@@ -285,22 +306,6 @@ body {
   left: 30px;
   top: -20px;
 }
-/* .main-about .main-title {
-  margin-bottom: 2rem;
-  position: relative;
-  transition: var(--transition);
-}
-.main-about .main-title::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  bottom: 20px;
-  left: 0;
-  height: 5px;
-  border-radius: 10px;
-  background-color: var(--secondry-color);
-  transition: var(--transition);
-} */
 .main-about .main-description {
   display: flex;
   padding-top: 3.5rem;
@@ -328,7 +333,6 @@ body {
 }
 .main-about #button {
   background-color: transparent;
-  color: white;
   border: none;
   background-color: var(--blurBgColor);
   backdrop-filter: blur(8px);
@@ -341,6 +345,7 @@ body {
 }
 #button {
   width: auto;
+  color: var(--secondry-color);
   padding: 0.3rem 2rem;
   box-shadow: 0 0 20px -5px var(--primary-color);
   margin: 1rem 0;
@@ -387,7 +392,7 @@ body {
   width: 0%;
   height: 3px;
   transition: var(--transition);
-  z-index: 99;
+  /* z-index: 99; */
 }
 .main-projects .projects .project::before {
   top: 0;

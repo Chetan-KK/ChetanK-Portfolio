@@ -1,12 +1,26 @@
 import gsap from "gsap";
+import CSSRulePlugin from "gsap/CSSRulePlugin";
+gsap.registerPlugin(CSSRulePlugin);
+
+let rule = CSSRulePlugin.getRule(".animBox::before");
+
 
 export function loaded() {
-    gsap.to(".loading", { y: "-100%", duration: 1, delay: 2 });
-    gsap.to(".loading2", { y: "-100%", duration: 1, delay: 2.3 });
-    gsap.to("html", { overflowY: "scroll", duration: 0, delay: 6 });
-    gsap.from(".header", { y: "-150%", duration: .5, delay: 3 });
-    gsap.from(".logo", { x: "-100%", opacity: 0, duration: .5, delay: 3.5 });
-    gsap.from(".main-link", { opacity: "0", duration: .5, delay: 4, stagger: .2 });
-    gsap.from(".main-title", { y: "-50%", opacity: 0, duration: 1, delay: 4 });
-    gsap.from(".main-body .main-description", { y: "200%", opacity: 0, duration: 1, delay: 4 });
+    const tl = gsap.timeline();
+    if (window.innerWidth > 705) {
+        tl.to(".loading", { y: "-100%", duration: 1 })
+            .to(".loading2", { y: "-100%", duration: 1 }, '-=.7')
+            .from(".header", { y: "-150%", duration: .5 })
+            .from(".logo", { x: "-100%", opacity: 0, duration: .5 })
+            .to("html", { overflowY: "scroll", duration: 0 })
+            .from(".main-link", { opacity: "0", duration: .5, stagger: .2 })
+            .from(".main-title", { y: "-100%", opacity: 0, duration: 1 })
+            .from(rule, { height: '100%', duration: .5 }, '-=.8')
+            .from(".main-body .main-description", { y: "100%", opacity: 0, duration: 1 }, '-=.7');
+    } else {
+        tl.to(".loading", { y: "-100%", duration: 1 })
+            .to(".loading2", { y: "-100%", duration: 1 }, '-=.7')
+            .to("html", { overflowY: "scroll", duration: 0 });
+    }
+
 }

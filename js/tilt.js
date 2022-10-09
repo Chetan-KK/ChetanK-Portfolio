@@ -43,6 +43,6 @@ if (window.innerWidth > 705) {
         reverse: true,
         speed: 700,
         reset: true,
-        max: 10,
+        max: 3,
     });
 }

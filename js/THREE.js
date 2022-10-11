@@ -249,7 +249,12 @@ const tick = () => {
   torus.position.z = window.scrollY / 200;
   box.position.z = window.scrollY / 200;
 
+
+  particals.rotation.x = window.scrollY / sizes.height;
+
+
   secondGroup.position.z = window.scrollY / 200;
+
   if (window.innerWidth > 705) {
     torus.rotation.z = elapsedTime / 1.5;
     box.rotation.z = -elapsedTime;
@@ -260,6 +265,8 @@ const tick = () => {
     secondGroup.rotation.set(secondGroupAnimationTime, secondGroupAnimationTime, 0);
 
     particals.rotation.z = elapsedTime / 10;
+
+
   } else {
     torus.position.y = -window.scrollY / 400;
     torus.rotation.z = elapsedTime / 1.5;

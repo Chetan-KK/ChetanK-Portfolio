@@ -1,6 +1,6 @@
 import Tilt from "vanilla-tilt";
 
-let myImg = document.querySelector(".myimg");
+let myImgBox = document.querySelector(".myImgBox");
 let projects = document.querySelectorAll(".project");
 let mainBodyTitle = document.querySelector(".main-body .left");
 let mainTitle = document.querySelectorAll(".main-title");
@@ -9,7 +9,7 @@ let input = document.querySelectorAll(".input");
 
 if (window.innerWidth > 705) {
 
-    Tilt.init(myImg, {
+    Tilt.init(myImgBox, {
         reverse: true,
         speed: 700,
         reset: false,

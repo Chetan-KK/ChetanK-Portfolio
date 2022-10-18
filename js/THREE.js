@@ -3,7 +3,6 @@
  */
 import * as THREE from "three";
 import '../css/style.css';
-// import * as orbitControls from "three/examples/jsm/controls/OrbitControls";
 import datGui from "dat.gui";
 import RockTexture from "../media/textures/normal texture/rock.png";
 import ParticleTexture from "../media/textures/particles/1.png";
@@ -16,6 +15,20 @@ import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass';
 /**
  * variables
  */
+const root = document.querySelector(':root');
+let ChangeColorBut = document.getElementById('changeColorBut');
+
+let primaryColor = getComputedStyle(root).getPropertyValue('--primary-color');
+let color = new THREE.Color(primaryColor.trim(' '));
+
+ChangeColorBut.value = primaryColor.trim(' ');
+
+ChangeColorBut.addEventListener('change', () => {
+  root.style.setProperty('--primary-color', ChangeColorBut.value);
+
+  scene.children[1].color = new THREE.Color(ChangeColorBut.value);
+
+});
 
 //clock
 const clock = new THREE.Clock();
@@ -43,36 +56,66 @@ window.addEventListener("resize", () => {
   renderer.render(scene, camera);
 
 
-  effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  effectComposer.setSize(sizes.width, sizes.height);
+  // effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  // effectComposer.setSize(sizes.width, sizes.height);
 
 });
 
 /**
  * custom controls
  */
-window.addEventListener("mousemove", (e) => {
-  let multiplier = 2;
-  let x = ((e.clientX / window.innerWidth) - .5) * multiplier;
-  let y = ((e.clientY / window.innerHeight) - .5) * multiplier;
+// const mouse = {
+//   x: 0,
+//   y: 0
+// };
+// window.addEventListener("mousemove", (e) => {
+//   let multiplier = 2;
+//   let x = ((e.clientX / window.innerWidth) - .5) * multiplier;
+//   let y = ((e.clientY / window.innerHeight) - .5) * multiplier;
 
-  // camera.position.set(-x, y, 10);
+//   // camera.position.set(-x, y, 10);
 
-  if (window.innerWidth > 705) {
+//   if (window.innerWidth > 705) {
 
-    torus.rotation.set(y, x, 10);
-    box.rotation.set(-y, -x, 10);
+//     torus.rotation.set(y, x, 10);
+//     box.rotation.set(-y, -x, 10);
 
-    box1.rotation.set(y, x, 10);
-    box2.rotation.set(y, x, 10);
+//     box1.rotation.set(y, x, 10);
+//     box2.rotation.set(y, x, 10);
 
-    particals.rotation.set(-y / 10, -x / 10, 10);
+//     particals.rotation.set(-y / 10, -x / 10, 10);
 
-  }
+//   }
 
 
-  // pointLight.position.set(x, y, 3);
-});
+//   // pointLight.position.set(x, y, 3);
+// });
+
+let plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -10);
+let raycaster = new THREE.Raycaster();
+let mouse = new THREE.Vector2();
+let look = new THREE.Vector2();
+let pointOfIntersection = new THREE.Vector3();
+window.addEventListener("mousemove", onMouseMove, false);
+
+const multiplier = 8;
+
+function onMouseMove(e) {
+
+  mouse.x = ((e.clientX / window.innerWidth) - .5) * multiplier;
+  mouse.y = - ((e.clientY / window.innerHeight) - .5) * multiplier;
+
+}
+
+const easeAmount = 12;
+
+function update() {
+  look.x += ((mouse.x - look.x) / easeAmount);
+  look.y += ((mouse.y - look.y) / easeAmount);
+  raycaster.setFromCamera(look, camera);
+  raycaster.ray.intersectPlane(plane, pointOfIntersection);
+  torus.lookAt(pointOfIntersection);
+}
 
 /**
  * loaders
@@ -112,12 +155,12 @@ scene.add(directionalLight);
 
 gui.add(directionalLight.position, "x").min(-10).max(10).step(0.01);
 
-const directionalLight2 = new THREE.DirectionalLight(0xffffff, .5);
-directionalLight2.position.set(10, 4, 4);
-directionalLight2.visible = false;
-scene.add(directionalLight2);
+// const directionalLight2 = new THREE.DirectionalLight(0xff00ff, .5);
+// directionalLight2.position.set(10, 4, 4);
+// directionalLight2.visible = false;
+// scene.add(directionalLight2);
 
-const pointLight = new THREE.PointLight(0xff0000, .6);
+const pointLight = new THREE.PointLight(color, .6);
 pointLight.position.set(3, 3, 3);
 scene.add(pointLight);
 
@@ -248,7 +291,9 @@ const tick = () => {
   //animations
   torus.position.z = window.scrollY / 200;
   box.position.z = window.scrollY / 200;
+  box.position.x = -window.scrollY / 350;
 
+  update();
 
   particals.rotation.x = window.scrollY / sizes.height;
 
@@ -288,22 +333,19 @@ tick();
  * gsap animation
  */
 function gsapAnim() {
-  gsap.from(camera.rotation, {
+  gsap.from(camera.position, {
     duration: 3,
     x: 0,
-    y: 3,
-    z: 0,
-    delay: 2.5
+    y: 0,
+    z: -20,
+    delay: 2.5,
+    ease: "bounce.out"
   });
 }
 
 /**
  * responsive
  */
-window.addEventListener("resize", () => {
-  alignCamera();
-
-});
 function alignCamera() {
   if (window.innerWidth < 705) {
     camera.position.set(0, -3, 15);

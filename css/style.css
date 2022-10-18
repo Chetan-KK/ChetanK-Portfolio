@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap");
 :root {
-  --primary-color: red;
+  --primary-color: #ff0000;
   --secondry-color: white;
   --blurBgColor: hsla(0, 0%, 100%, 0.082);
   --textBg: rgba(20, 20, 20, 0.767);
@@ -56,6 +56,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+input[type="color"] {
+  width: 30px;
 }
 .pleaseUsePc {
   display: none;
@@ -255,6 +258,7 @@ body {
 }
 .main-body .main-title {
   z-index: 999;
+  margin-top: 20vh;
 }
 .main-title {
   text-shadow: 0 0 60px var(--primary-color);
@@ -360,12 +364,20 @@ body {
   justify-content: space-around;
   width: 100%;
 }
+.myImgBox {
+  position: relative;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 40rem;
+  backdrop-filter: hue-rotate(120deg);
+}
 .myimg {
   height: 40rem;
-  border-radius: 20px;
+  width: 30rem;
   transition: var(--transition);
 }
-.myimg:hover {
+.myImgBox:hover {
   box-shadow: 0 0 60px -5px var(--primary-color);
 }
 .main-projects {

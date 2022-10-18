@@ -25,10 +25,26 @@ const sizes = {
     height: 80
 };
 
+
+const root = document.querySelector(':root');
+let ChangeColorBut = document.getElementById('changeColorBut');
+
+let primaryColor = getComputedStyle(root).getPropertyValue('--primary-color');
+let color = new THREE.Color(String(primaryColor).trim(' '));
+
+
+ChangeColorBut.addEventListener('change', () => {
+    root.style.setProperty('--primary-color', ChangeColorBut.value);
+
+    scene.children[0].color = new THREE.Color(ChangeColorBut.value);
+
+});
+
+
 const textureLoader = new THREE.TextureLoader();
 const rockTexture = textureLoader.load(RockTexture);
 
-const directionalLight = new THREE.DirectionalLight(0xff0000, .5);
+const directionalLight = new THREE.DirectionalLight(color, .5);
 scene.add(directionalLight);
 
 const directionalLight2 = new THREE.DirectionalLight(0xffffff, .5);

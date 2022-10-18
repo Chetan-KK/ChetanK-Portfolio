@@ -12,6 +12,13 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+function changeColor() {
+    console.log('e');
+}
+
+
+
 // //loading
 
 

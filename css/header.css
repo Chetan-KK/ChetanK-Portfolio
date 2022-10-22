@@ -1,0 +1,89 @@
+.header {
+  width: 100%;
+  position: fixed;
+  justify-content: space-around;
+  font-family: var(--bebas-font);
+  padding: 1rem 2rem;
+  background-color: var(--blurBgColor);
+  backdrop-filter: blur(3px);
+  z-index: 99;
+}
+.header .logo a {
+  position: relative;
+  /* cursor: pointer; */
+  letter-spacing: var(--letter-spacing);
+  color: var(--secondry-color);
+  font-size: 2rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.header .logo a::first-letter {
+  color: var(--primary-color);
+}
+.header .logo a:hover::first-letter {
+  color: var(--secondry-color);
+}
+.header .logo a:hover {
+  text-shadow: 0 0 30px var(--primary-color);
+  color: var(--primary-color);
+}
+.header .logo a::before,
+.header .logo a::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--secondry-color);
+  transition: var(--transition);
+}
+.header .logo a::before {
+  right: 0;
+  top: -5px;
+}
+.header .logo a::after {
+  background-color: var(--primary-color);
+  left: 0;
+  bottom: 0;
+}
+.header .logo a:hover::before,
+.header .logo a:hover::after {
+  width: 120%;
+}
+.main-link {
+  margin: 0 1rem;
+  font-size: 1.2rem;
+}
+.main-link a {
+  font-family: var(--bebas-font);
+  position: relative;
+  color: var(--secondry-color);
+  text-decoration: none;
+  transition: var(--transition);
+  letter-spacing: var(--letter-spacing);
+  transform: scale(2);
+}
+.main-link::first-letter {
+  color: var(--primary-color);
+}
+.main-link:hover::first-letter {
+  color: var(--secondry-color);
+}
+.main-link a:hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color);
+}
+.main-link a::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--secondry-color);
+  transition: var(--transition);
+}
+.main-link a:hover::before {
+  width: 100%;
+}

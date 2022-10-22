@@ -1,3 +1,15 @@
+import '../css/main.css';
+import '../css/header.css';
+import '../css/mainBody.css';
+import '../css/about.css';
+import '../css/projects.css';
+import '../css/contact.css';
+import '../css/footer.css';
+import '../css/media900.css';
+import '../css/media710.css';
+import '../css/media640.css';
+import '../css/media590.css';
+
 let logo = document.getElementById('logo');
 
 window.addEventListener('scroll', () => {
@@ -11,31 +23,4 @@ window.addEventListener('scroll', () => {
         }
     }
 });
-
-
-function changeColor() {
-    console.log('e');
-}
-
-
-
-// //loading
-
-
-// const loadingPage = document.getElementById("loading");
-// const html = document.querySelector("html");
-// let root = document.querySelector(":root");
-
-// // function changeColorToRed() {
-// //     root.style.setProperty("--primary-color", "#ff0000");
-// // }
-// // function changeColorToCyan() {
-// //     root.style.setProperty("--primary-color", "#00ffff");
-// // }
-// // function changeColorToYellow() {
-// //     root.style.setProperty("--primary-color", "#ffff00");
-// // }
-// // function changeColorToPurple() {
-// //     root.style.setProperty("--primary-color", "#ff00ff");
-// // }
 

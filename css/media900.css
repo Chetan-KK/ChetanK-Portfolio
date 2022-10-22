@@ -1,0 +1,24 @@
+@media screen and (max-width: 900px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  .main-about .main-description {
+    width: auto;
+    height: auto;
+  }
+  .main-about::before {
+    left: 40px;
+    top: 0px;
+  }
+  .main-about::after {
+    left: 30px;
+    top: 20px;
+  }
+  .main-footer {
+    justify-content: center;
+    text-align: center;
+  }
+  .main-footer .copyright {
+    margin-bottom: 1rem;
+  }
+}

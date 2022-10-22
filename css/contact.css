@@ -1,0 +1,33 @@
+.main-contact {
+  flex-direction: column;
+  margin: 4rem 0;
+}
+.main-contact .form form {
+  flex-direction: column;
+}
+.main-contact .form form input,
+.main-contact .form form textarea {
+  position: relative;
+  margin: 1rem 0;
+  padding: 0.3rem 0.7rem;
+  width: 70vw;
+  background-color: var(--blurBgColor);
+  backdrop-filter: blur(8px);
+  font-family: var(--oswald-font);
+  letter-spacing: var(--letter-spacing);
+  font-size: 1.3rem;
+  color: var(--secondry-color);
+  border: none;
+  transition: var(--transition);
+  resize: none;
+  border-bottom: 1px solid var(--secondry-color);
+}
+.main-contact .form form input:hover,
+.main-contact .form form textarea:hover,
+.main-contact .form form input:focus,
+.main-contact .form form textarea:focus {
+  box-shadow: 0 0 60px -5px var(--primary-color);
+  outline: none;
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--primary-color);
+}

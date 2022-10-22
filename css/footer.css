@@ -1,0 +1,31 @@
+.main-footer {
+  justify-content: space-between;
+  padding: 0.7rem 1.3rem;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 30px var(--primary-color);
+  opacity: 0.7;
+  position: relative;
+}
+.main-footer .copyright {
+  font-size: 1.5rem;
+  color: var(--secondry-color);
+  font-family: var(--bebas-font);
+}
+.main-footer .copyright .main-link a {
+  font-family: var(--oswald-font);
+}
+.main-footer .copyright .main-link a::first-letter {
+  color: white;
+}
+.main-footer .copyright .main-link a:hover {
+  color: white;
+}
+.social-links a {
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  color: var(--secondry-color);
+  transition: var(--transition);
+}
+.social-links a:hover {
+  color: var(--black);
+}

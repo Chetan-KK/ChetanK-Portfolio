@@ -1,0 +1,27 @@
+@media screen and (max-width: 640px) {
+  .main-projects {
+    background-color: var(--blurBgColor);
+    backdrop-filter: blur(5px);
+  }
+  .project {
+    margin: 0;
+  }
+  .project:hover {
+    margin: 0;
+  }
+  .main-projects .projects .project .project-title {
+    font-size: 4vw;
+  }
+  .main-projects .projects .project .project-image {
+    width: 60vw;
+    height: 22.6vh;
+  }
+  .project-description {
+    font-size: 2.5vw;
+    line-height: 20px;
+    width: 60vw;
+    height: 22.6vh;
+    top: 4.55rem;
+    /* bottom: 1000px; */
+  }
+}

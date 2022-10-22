@@ -1,0 +1,115 @@
+.main-about {
+  /* margin: 2rem; */
+  padding: 3vh 3vw 3vw 3vw;
+  background-color: var(--blurBgColor);
+  backdrop-filter: blur(4px);
+  /* border-radius: 30px; */
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.5s;
+}
+.main-about.fade-in {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.main-about::before,
+.main-about::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  top: 0;
+  transform: rotate(-50deg);
+  left: 0;
+  height: 5px;
+  border-radius: 10px;
+  background-color: var(--secondry-color);
+  transition: var(--transition);
+}
+.main-about::before {
+  background-color: var(--primary-color);
+  width: 10%;
+  left: 30px;
+  top: -20px;
+}
+.main-about .main-description {
+  display: flex;
+  padding-top: 3.5rem;
+  flex-direction: column;
+  justify-content: center;
+  height: 40rem;
+  width: 40vw;
+  text-align: justify;
+  margin-right: 20px;
+  color: var(--secondry-color);
+  font-family: var(--bebas-font);
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+.main-about .main-description p {
+  margin-bottom: 3rem;
+}
+.main-about .main-description p b {
+  color: var(--primary-color);
+}
+.main-about .main-description p::first-letter {
+  color: var(--primary-color);
+  font-size: 3rem;
+  line-height: 0;
+}
+.main-about #button {
+  background-color: transparent;
+  border: none;
+  background-color: var(--blurBgColor);
+  backdrop-filter: blur(8px);
+  font-family: var(--bebas-font);
+  letter-spacing: var(--letter-spacing);
+  font-size: 1.3rem;
+  width: fit-content;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.myself {
+  justify-content: space-around;
+  width: 100%;
+}
+.myImgBox {
+  position: relative;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 40rem;
+  backdrop-filter: hue-rotate(120deg);
+}
+.myimg {
+  height: 40rem;
+  width: 30rem;
+  transition: var(--transition);
+}
+.myImgBox:hover {
+  box-shadow: 0 0 60px -5px var(--primary-color);
+}
+.main-projects {
+  margin: 0 5rem;
+  flex-direction: column;
+}
+.myImgBox {
+  position: relative;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 40rem;
+  backdrop-filter: hue-rotate(120deg);
+}
+.myimg {
+  height: 40rem;
+  width: 30rem;
+  transition: var(--transition);
+}
+.myImgBox:hover {
+  box-shadow: 0 0 60px -5px var(--primary-color);
+}
+.main-projects {
+  margin: 0 5rem;
+  flex-direction: column;
+}

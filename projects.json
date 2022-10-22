@@ -1,0 +1,20 @@
+[
+  {
+    "title": "College Management System (4-2019)",
+    "imgSrc": "/media/images/collegeMS-project.png",
+    "disc": "<p>This Project is created for <b>Ashok polytechnic college</b> to manage <b>Students</b> and <b>Staff</b> of all departments</p>",
+    "link": "https://github.com/Chetan-KK/Covid-India"
+  },
+  {
+    "title": "Country Founder (12-2019)",
+    "imgSrc": "/media/images/covid-project.png",
+    "disc": "<p>On this website user can see status about <b>India</b> like currunt cases, state-wise status is shown in <b>visual and table view</b>, user can login and check their covid condition.</p> <p>This includes <b>dark mode</b> and <b>light mode</b> and cool animations with responsive design</p>",
+    "link": "https://chetan-kk.github.io/covid-design"
+  },
+  {
+    "title": "Country Founder (12-2019)",
+    "imgSrc": "/media/images/country_founder-project.PNG",
+    "disc": "<p>This project uses an <b>API</b> to collect details of <b>every Country</b> and showcase it.</p><p>This website can run on <b>almost any device</b> and contains two <b>dark</b> and <b>light</b> mode</p>",
+    "link": "https://chetan-kk.github.io/countries-details/"
+  }
+]

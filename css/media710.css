@@ -1,0 +1,14 @@
+@media screen and (max-width: 710px) {
+  .header {
+    padding: 2rem 0;
+  }
+  .main-body {
+    justify-content: center;
+  }
+  .project {
+    margin: 1rem 1.5rem;
+  }
+  .main-projects .projects .project:hover {
+    margin: 1rem 1.5rem;
+  }
+}

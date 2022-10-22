@@ -2,7 +2,6 @@
  * importing files and modules
  */
 import * as THREE from "three";
-import '../css/style.css';
 import datGui from "dat.gui";
 import RockTexture from "../media/textures/normal texture/rock.png";
 import ParticleTexture from "../media/textures/particles/1.png";
@@ -91,7 +90,7 @@ window.addEventListener("resize", () => {
 //   // pointLight.position.set(x, y, 3);
 // });
 
-let plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -10);
+let plane = new THREE.Plane(new THREE.Vector3(0, 0, 5), -10);
 let raycaster = new THREE.Raycaster();
 let mouse = new THREE.Vector2();
 let look = new THREE.Vector2();
@@ -108,13 +107,18 @@ function onMouseMove(e) {
 }
 
 const easeAmount = 12;
-
+const divider = 4;
 function update() {
   look.x += ((mouse.x - look.x) / easeAmount);
   look.y += ((mouse.y - look.y) / easeAmount);
   raycaster.setFromCamera(look, camera);
   raycaster.ray.intersectPlane(plane, pointOfIntersection);
   torus.lookAt(pointOfIntersection);
+
+  torus.position.x = pointOfIntersection.x / divider;
+
+  torus.position.y = pointOfIntersection.y / divider;
+  torus.rotation.z = window.scrollY / 400;
 }
 
 /**
@@ -176,52 +180,31 @@ let material = new THREE.MeshStandardMaterial({
   normalMap: rockTexture,
 });
 
-// gui.add(material, "roughness").min(-1).max(2).name("roughness").step(.01);
-// gui.add(material, "metalness").min(1).max(3).name("metalness").step(.01);
-
 //first group
-const firstGroup = new THREE.Group();
-const torus = new THREE.Mesh(new THREE.TorusBufferGeometry(2, 1, 32, 50), material);
-firstGroup.add(torus);
+const torus = new THREE.Mesh(new THREE.TorusBufferGeometry(1, .5, 32, 64), material);
+scene.add(torus);
 
-const box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1, 1, 1, 1), material);
-firstGroup.add(box);
+const box = new THREE.Mesh(new THREE.BoxBufferGeometry(.5, .5, .5, 1, 1, 1), material);
+scene.add(box);
 
-scene.add(firstGroup);
 
-//second group
-const secondGroup = new THREE.Group();
-const box1 = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1, 1, 1, 1), material);
-box1.position.set(5, 0, 0);
-secondGroup.add(box1);
-
-const box2 = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1, 1, 1, 1), material);
-box2.position.set(-5, 0, 0);
-secondGroup.add(box2);
-
-scene.add(secondGroup);
 
 /**
  * particles
  */
 const particalsGeometary = new THREE.BufferGeometry();
-const count = 2000;
+const count = 1000;
 
 const positions = new Float32Array(count * 3);
 const colors = new Float32Array(count * 3);
 
-for (let i = 0; i < count; i++) {
+for (let i = 0; i < count * 3; i++) {
 
   positions[i] = (Math.random() - 0.5) * 50;
-  positions[i + 1] = (Math.random() - 0.5) * 50;
-  positions[i + 2] = (Math.random() - 0.5) * 50;
 
   colors[i] = Math.random();
-  colors[i + 1] = Math.random();
-  colors[i + 2] = Math.random();
-  i++;
-  i++;
 }
+
 particalsGeometary.setAttribute(
   "position",
   new THREE.BufferAttribute(positions, 3)
@@ -246,14 +229,8 @@ scene.add(particals);
  * camera
  */
 const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height);
-camera.position.set(-5, .5, 15);
+camera.position.set(0, 0, 7);
 scene.add(camera);
-
-/**
- * controls
- */
-// const controls = new orbitControls.OrbitControls(camera, canvas);
-// controls.enableDamping = true;
 
 /**
  * renderer
@@ -289,38 +266,15 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   //animations
-  torus.position.z = window.scrollY / 200;
-  box.position.z = window.scrollY / 200;
-  box.position.x = -window.scrollY / 350;
+  box.rotation.z = elapsedTime;
+  box.rotation.y = elapsedTime;
+
+  torus.position.z = window.scrollY / 600;
+
+  particals.rotation.x = window.scrollY / 600;
+  particals.rotation.z = elapsedTime / 10;
 
   update();
-
-  particals.rotation.x = window.scrollY / sizes.height;
-
-
-  secondGroup.position.z = window.scrollY / 200;
-
-  if (window.innerWidth > 705) {
-    torus.rotation.z = elapsedTime / 1.5;
-    box.rotation.z = -elapsedTime;
-
-    torus.position.x = -window.scrollY / 200;
-
-    const secondGroupAnimationTime = (elapsedTime) / 3;
-    secondGroup.rotation.set(secondGroupAnimationTime, secondGroupAnimationTime, 0);
-
-    particals.rotation.z = elapsedTime / 10;
-
-
-  } else {
-    torus.position.y = -window.scrollY / 400;
-    torus.rotation.z = elapsedTime / 1.5;
-  }
-
-  // particals.rotation.y = elapsedTime / 20;
-
-  //update controls
-  // controls.update();
 
   //render
   // renderer.render(scene, camera);
@@ -332,29 +286,28 @@ tick();
 /**
  * gsap animation
  */
-function gsapAnim() {
-  gsap.from(camera.position, {
-    duration: 3,
-    x: 0,
-    y: 0,
-    z: -20,
-    delay: 2.5,
-    ease: "bounce.out"
-  });
-}
+gsap.from(camera.position, {
+  duration: 2,
+  x: 0,
+  y: 0,
+  z: -10,
+  delay: 2.5,
+  ease: "bounce.out"
+});
 
 /**
  * responsive
  */
-function alignCamera() {
-  if (window.innerWidth < 705) {
-    camera.position.set(0, -3, 15);
 
-  }
-  else {
-    particals.position.set(0, 0, 0);
-    camera.position.set(-5, .5, 15);
-    gsapAnim();
-  }
-}
-alignCamera();
+// function alignCamera() {
+//   if (window.innerWidth < 705) {
+//     camera.position.set(0, -3, 15);
+
+//   }
+//   else {
+//     particals.position.set(0, 0, 0);
+//     camera.position.set(-5, .5, 15);
+//     gsapAnim();
+//   }
+// }
+// alignCamera();

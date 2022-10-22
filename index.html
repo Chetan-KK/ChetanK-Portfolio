@@ -74,7 +74,9 @@
           &#160;
           <p class="p">Khulage</p>
         </div>
-        <div class="main-description animBox">Front-End Web Developer</div>
+        <div class="main-description animBox">
+          Front-End Web Developer / Designer
+        </div>
       </div>
     </div>
     <main class="main-about flex" id="about-section">
@@ -110,82 +112,12 @@
         </div>
       </div>
     </main>
+
     <section class="main-projects flex" id="project-section">
       <div class="main-title">
         <p>Projects</p>
       </div>
-      <div class="projects flex">
-        <div class="project">
-          <img
-            src="/media/images/collegeMS-project.png"
-            alt="project"
-            class="project-image"
-          />
-          <div class="project-description">
-            <p class="p">
-              This Project is created for <b>Ashok polytechnic college</b> to
-              manage <b>Students</b> and <b>Staff</b> of all departments
-            </p>
-            <div class="main-link cursorRespondLink">
-              <a href="https://github.com/Chetan-KK/Covid-India" target="_blank"
-                >Visit Project</a
-              >
-            </div>
-          </div>
-          <div class="project-title">College Management System (4-2019)</div>
-        </div>
-
-        <div class="project">
-          <img
-            src="/media/images/country_founder-project.PNG"
-            alt="project"
-            class="project-image"
-          />
-          <div class="project-description">
-            <p class="p">
-              This project uses an <b>API</b> to collect details of
-              <b>every Country</b> and showcase it
-            </p>
-            <p class="p">
-              This website can run on <b>almost any device</b> and contains two
-              <b>dark</b> and <b>light</b> mode
-            </p>
-            <div class="main-link cursorRespondLink">
-              <a
-                href="https://chetan-kk.github.io/countries-details/"
-                target="_blank"
-                >Visit Project</a
-              >
-            </div>
-          </div>
-          <div class="project-title">Country Founder (12-2019)</div>
-        </div>
-        <div class="project">
-          <img
-            src="/media/images/covid-project.png"
-            alt="project"
-            class="project-image"
-          />
-          <div class="project-description">
-            <p class="p">
-              On this website user can see status about <b>India</b> like
-              currunt cases, state-wise status is shown in
-              <b>visual and table view</b>, user can login and check their covid
-              condition.
-            </p>
-            <p class="p">
-              This includes <b>dark mode</b> and <b>light mode</b> and cool
-              animations with responsive design
-            </p>
-            <div class="main-link cursorRespondLink">
-              <a href="https://chetan-kk.github.io/covid-design" target="_blank"
-                >Visit Project</a
-              >
-            </div>
-          </div>
-          <div class="project-title">Covid-India (1-2020)</div>
-        </div>
-      </div>
+      <div id="projectsBox" class="projects flex"></div>
     </section>
     <section class="main-contact flex" id="contact-section">
       <div class="main-title flex">
@@ -229,10 +161,6 @@
         </form>
       </div>
     </section>
-    <!-- <div class="main-title flex">
-      <p class="p">social</p>
-      <p class="p">&#160;links</p>
-    </div> -->
     <footer class="main-footer flex">
       <div class="copyright">
         &copy;Chetan Khulage |
@@ -262,11 +190,12 @@
       </div>
     </footer>
 
+    <script src="/js/main.js" type="module"></script>
+    <script src="/js/fetchProjects.js" type="module"></script>
     <script src="/js/THREE.js" type="module"></script>
     <script src="/js/cursorTHREE.js" type="module"></script>
     <script src="/js/gsap.js" type="module"></script>
     <script src="/js/scrollmagic.js" type="module"></script>
     <script src="/js/tilt.js" type="module"></script>
-    <script src="/js/main.js" type="module"></script>
   </body>
 </html>

@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap");
+:root {
+  --primary-color: #ff0000;
+  --secondry-color: white;
+  --blurBgColor: hsla(0, 0%, 100%, 0.082);
+  --textBg: rgba(20, 20, 20, 0.767);
+  --loading-overlay: rgba(0, 0, 0, 0.692);
+  --black: rgb(20, 20, 20);
+  --transition: 400ms;
+  --letter-spacing: 3px;
+  --bebas-font: "Bebas Neue", cursive;
+  --oswald-font: "Oswald", sans-serif;
+}
+html {
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-padding: 12rem;
+}
+body {
+  background-color: var(--black);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+*::selection {
+  background-color: var(--primary-color);
+  color: var(--secondry-color);
+}
+::-webkit-scrollbar {
+  width: 2px;
+  background-color: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(10deg, var(--primary-color), var(--black));
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+input[type="color"] {
+  width: 30px;
+}
+.pleaseUsePc {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--black);
+  color: var(--secondry-color);
+  top: 0;
+  font-family: var(--oswald-font);
+  font-size: 1.5rem;
+  left: 0;
+  z-index: 9999;
+}
+.loading {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  transition: height 1s;
+  position: fixed;
+  background-color: var(--black);
+  z-index: 99999 !important;
+  font-size: 6rem;
+  font-family: var(--bebas-font);
+  color: var(--secondry-color);
+}
+.loading p::first-letter {
+  color: var(--primary-color);
+}
+.loading p {
+  position: relative;
+}
+.loading p::before,
+.loading p::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1%;
+  background-color: var(--black);
+  box-shadow: 0 0 30px 30px var(--black);
+  top: 0;
+  transform: rotate(50deg);
+  animation: loadingRotator 1s 0s infinite ease-out;
+}
+.loading p::after {
+  left: -20%;
+}
+.loading p::before {
+  left: -50%;
+}
+@keyframes loadingRotator {
+  to {
+    transform: translateX(60rem) rotate(50deg);
+  }
+}
+.loading2 {
+  background-color: var(--primary-color);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.cursorCanvas,
+.cursorCanvasHoverOnLink {
+  pointer-events: none;
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0 0 -10px var(--primary-color);
+  z-index: 99999;
+  transition: opacity var(--transition), transform var(--transition),
+    box-shadow var(--transition);
+}
+.myCanvas {
+  top: 0;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -9;
+}
+
+#button {
+  width: auto;
+  color: var(--secondry-color);
+  padding: 0.3rem 2rem;
+  box-shadow: 0 0 20px -5px var(--primary-color);
+  margin: 1rem 0;
+}
+#button:hover {
+  padding: 0.3rem 3rem;
+  opacity: 0.7;
+  box-shadow: 0 0 40px -5px var(--primary-color);
+  background-color: var(--primary-color);
+}

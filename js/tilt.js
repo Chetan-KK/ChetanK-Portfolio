@@ -25,13 +25,13 @@ if (window.innerWidth > 705) {
         reverse: true,
         speed: 1500,
         reset: false,
-        max: 20,
+        max: 2,
     });
     Tilt.init(mainTitle, {
         reverse: true,
         speed: 1500,
         reset: false,
-        max: 20,
+        max: 5,
     });
     Tilt.init(about, {
         reverse: true,

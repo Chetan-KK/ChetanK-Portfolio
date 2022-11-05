@@ -31,37 +31,31 @@
       <p>Loading Please Wait</p>
     </div>
     <div class="loading2"></div>
-    <!-- <div class="colorPicker flex">
-      <div class="main-title">Pick your favorite colour</div>
-      <div class="colors flex">
-        <div class="colorRed color" onclick="changeColorToRed()"></div>
-        <div class="colorCyan color" onclick="changeColorToCyan()"></div>
-        <div class="colorYellow color" onclick="changeColorToYellow()"></div>
-        <div class="colorPurple color" onclick="changeColorToPurple()"></div>
-      </div>
-    </div> -->
     <canvas class="cursorCanvas flex" id="cursorCanvasID"></canvas>
     <header class="flex header">
       <div class="flex logo">
         <a href="#top" id="logo" class="cursorRespondLink">CHETAN-KK</a>
+        <span id="navToggleOpen" class="navToggleButton navToggleOpen"
+          ><i class="fa-solid fa-bars"></i
+        ></span>
       </div>
       <nav class="nav flex">
-        <div class="main-link cursorRespondLink"><a href="#top">Home</a></div>
-        <div class="main-link cursorRespondLink">
+        <span id="navToggleClose" class="navToggleButton navToggleClose"
+          ><i class="fa-solid fa-xmark"></i
+        ></span>
+        <div class="main-link cursorRespondLink navToggleClose">
+          <a href="#top">Home</a>
+        </div>
+        <div class="main-link cursorRespondLink navToggleClose">
           <a href="#about-section">About</a>
         </div>
-        <div class="main-link cursorRespondLink">
+        <div class="main-link cursorRespondLink navToggleClose">
           <a href="#project-section">Projects</a>
         </div>
-        <div class="main-link cursorRespondLink">
+        <div class="main-link cursorRespondLink navToggleClose">
           <a href="#contact-section">Contact</a>
         </div>
         <div class="main-link cursorRespondLink">
-          <script>
-            // function changeColor() {
-            //   console.log("hi");
-            // }
-          </script>
           <input type="color" id="changeColorBut" />
         </div>
       </nav>

@@ -87,3 +87,15 @@
 .main-link a:hover::before {
   width: 100%;
 }
+#changeColorBut {
+  background-color: transparent;
+  border: none;
+  width: 30px;
+}
+.navToggleButton {
+  font-size: 2rem;
+  color: var(--secondry-color);
+}
+.navToggleButton {
+  display: none;
+}

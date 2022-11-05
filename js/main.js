@@ -10,17 +10,16 @@ import '../css/media710.css';
 import '../css/media640.css';
 import '../css/media590.css';
 
-let logo = document.getElementById('logo');
 
-window.addEventListener('scroll', () => {
-    if (window.innerWidth < 705) {
-        if (window.scrollY > 100) {
-            logo.style.fontSize = '1rem';
-            // logo.style.margin = '0 !important';
-        } else {
-            logo.style.fontSize = '2rem';
-            // logo.style.margin = '0.5rem 0 1.3rem 0';
-        }
-    }
+const navToggleOpen = document.querySelector('.navToggleOpen');
+const navToggleClose = document.querySelectorAll('.navToggleClose');
+const nav = document.querySelector('.nav');
+
+navToggleOpen.addEventListener("click", () => {
+    nav.style.transform = 'translateX(0%)';
 });
-
+navToggleClose.forEach((button) => {
+    button.addEventListener("click", () => {
+        nav.style.transform = 'translateX(100%)';
+    });
+});

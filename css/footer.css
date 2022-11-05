@@ -13,6 +13,7 @@
 }
 .main-footer .copyright .main-link a {
   font-family: var(--oswald-font);
+  font-size: 1.2rem;
 }
 .main-footer .copyright .main-link a::first-letter {
   color: white;

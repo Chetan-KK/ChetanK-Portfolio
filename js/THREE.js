@@ -119,6 +119,10 @@ function update() {
 
   torus.position.y = pointOfIntersection.y / divider;
   torus.rotation.z = window.scrollY / 400;
+
+  box.position.x = pointOfIntersection.x / (divider + 2);
+
+  box.position.y = pointOfIntersection.y / (divider + 2);
 }
 
 /**
@@ -237,6 +241,7 @@ scene.add(camera);
  */
 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
 renderer.setSize(sizes.width, sizes.height);
+
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.render(scene, camera);
 
@@ -269,7 +274,8 @@ const tick = () => {
   box.rotation.z = elapsedTime;
   box.rotation.y = elapsedTime;
 
-  torus.position.z = window.scrollY / 600;
+  torus.position.z = window.scrollY / 500;
+  box.position.z = window.scrollY / 700;
 
   particals.rotation.x = window.scrollY / 600;
   particals.rotation.z = elapsedTime / 10;
@@ -294,20 +300,3 @@ gsap.from(camera.position, {
   delay: 2.5,
   ease: "bounce.out"
 });
-
-/**
- * responsive
- */
-
-// function alignCamera() {
-//   if (window.innerWidth < 705) {
-//     camera.position.set(0, -3, 15);
-
-//   }
-//   else {
-//     particals.position.set(0, 0, 0);
-//     camera.position.set(-5, .5, 15);
-//     gsapAnim();
-//   }
-// }
-// alignCamera();

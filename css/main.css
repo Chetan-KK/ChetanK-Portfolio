@@ -44,9 +44,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-input[type="color"] {
-  width: 30px;
-}
 .pleaseUsePc {
   display: none;
   width: 100vw;
@@ -69,6 +66,7 @@ input[type="color"] {
   background-color: var(--black);
   z-index: 99999 !important;
   font-size: 6rem;
+  text-align: center;
   font-family: var(--bebas-font);
   color: var(--secondry-color);
 }
@@ -130,6 +128,7 @@ input[type="color"] {
   height: 100vh;
   position: fixed;
   z-index: -9;
+  transition: height var(--transition);
 }
 
 #button {

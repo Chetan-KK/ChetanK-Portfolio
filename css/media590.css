@@ -83,6 +83,7 @@
   .projects {
     margin: 0;
     padding: 0;
+    background-color: transparent;
   }
   .main-projects .projects .project {
     margin: 1rem 0;

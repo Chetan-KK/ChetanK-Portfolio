@@ -22,7 +22,7 @@
   background-color: var(--secondry-color);
 }
 .main-body .main-title {
-  z-index: 999;
+  z-index: 9;
   font-size: 8.5rem;
 }
 .main-body .main-title .p::first-letter {

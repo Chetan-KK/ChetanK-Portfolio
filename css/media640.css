@@ -1,7 +1,39 @@
 @media screen and (max-width: 640px) {
-  .main-projects {
-    background-color: var(--blurBgColor);
-    backdrop-filter: blur(5px);
+  .logo {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 2rem;
+    margin: 0 !important;
+  }
+  .nav {
+    background-color: rgb(39, 39, 39);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 7rem 3rem;
+    transform: translateX(100%);
+    transition: var(--transition);
+  }
+  .navToggleButton {
+    display: inline;
+    color: var(--secondry-color);
+  }
+  #navToggleClose {
+    right: 2.5rem;
+    top: 2rem;
+    position: absolute;
+  }
+  .main-link {
+    font-size: 3rem;
+  }
+  #changeColorBut {
+    width: 100px;
   }
   .project {
     margin: 0;

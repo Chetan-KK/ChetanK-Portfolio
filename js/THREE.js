@@ -60,36 +60,6 @@ window.addEventListener("resize", () => {
 
 });
 
-/**
- * custom controls
- */
-// const mouse = {
-//   x: 0,
-//   y: 0
-// };
-// window.addEventListener("mousemove", (e) => {
-//   let multiplier = 2;
-//   let x = ((e.clientX / window.innerWidth) - .5) * multiplier;
-//   let y = ((e.clientY / window.innerHeight) - .5) * multiplier;
-
-//   // camera.position.set(-x, y, 10);
-
-//   if (window.innerWidth > 705) {
-
-//     torus.rotation.set(y, x, 10);
-//     box.rotation.set(-y, -x, 10);
-
-//     box1.rotation.set(y, x, 10);
-//     box2.rotation.set(y, x, 10);
-
-//     particals.rotation.set(-y / 10, -x / 10, 10);
-
-//   }
-
-
-//   // pointLight.position.set(x, y, 3);
-// });
-
 let plane = new THREE.Plane(new THREE.Vector3(0, 0, 5), -10);
 let raycaster = new THREE.Raycaster();
 let mouse = new THREE.Vector2();
@@ -277,8 +247,8 @@ const tick = () => {
   torus.position.z = window.scrollY / 500;
   box.position.z = window.scrollY / 700;
 
-  particals.rotation.x = window.scrollY / 600;
-  particals.rotation.z = elapsedTime / 10;
+  particals.rotation.x = window.scrollY / 60;
+  particals.rotation.z = elapsedTime / 50;
 
   update();
 

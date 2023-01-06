@@ -1,26 +1,19 @@
 import Tilt from "vanilla-tilt";
 
 let myImgBox = document.querySelector(".myImgBox");
-let projects = document.querySelectorAll(".project");
 let mainBodyTitle = document.querySelector(".main-body .left");
 let mainTitle = document.querySelectorAll(".main-title");
 let about = document.querySelector(".main-about .main-description");
 let input = document.querySelectorAll(".input");
 
 function checkTilt() {
-    if (window.innerWidth > 705) {
+    if (window.innerWidth > 605) {
 
         Tilt.init(myImgBox, {
             reverse: true,
             speed: 700,
             reset: false,
             max: 10,
-        });
-        Tilt.init(projects, {
-            reverse: true,
-            speed: 1500,
-            reset: false,
-            max: 20,
         });
         Tilt.init(mainBodyTitle, {
             reverse: true,
@@ -49,7 +42,7 @@ function checkTilt() {
     }
 }
 
+checkTilt();
 window.addEventListener('resize', () => {
     checkTilt();
 });
-checkTilt();

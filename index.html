@@ -111,6 +111,26 @@
       </div>
       <div id="projectsBox" class="projects flex"></div>
     </section>
+
+    <section class="main-ai flex" id="ai-section">
+      <div class="main-title flex">
+        <p class="p">Ask me any doubt</p>
+        <p class="p">&#160; I'm AI</p>
+      </div>
+      <div class="form">
+        <form class="flex" id="aiForm">
+          <input type="text" placeholder="Ask me anything..." class="input cursorRespondLink" id="aiInput">
+          <input type="submit"
+          class="cursorRespondLink aiButton"
+          value="Get Result"
+          id="button"/>
+          <div id="aiOutput"></div>
+        </form>
+    
+
+      </div>
+    </section>
+    
     <section class="main-contact flex" id="contact-section">
       <div class="main-title flex">
         <p class="p">Lets</p>
@@ -119,8 +139,9 @@
       <div class="form">
         <form
           action="https://formsubmit.co/chetankhulage350@gmail.com"
-          class="flex"
+          class="flex preventForm"
           method="POST"
+          id="contactForm"
         >
           <input
             class="input cursorRespondLink"
@@ -146,7 +167,7 @@
           />
           <input
             type="submit"
-            class="cursorRespondLink"
+            class="cursorRespondLink contactSubmit"
             value="Send"
             id="button"
           />
@@ -155,12 +176,12 @@
     </section>
     <footer class="main-footer flex">
       <div class="copyright">
-        &copy;Chetan Khulage |
+        &copy; 2020 Chetan Khulage, all rights reserved 
         <span class="main-link">
           <a href="mailto:chetankhulage350@gmail.com"
             >chetankhulage350@gmail.com</a
           > </span
-        >| 2020-22
+        >
       </div>
       <div class="social-links flex">
         <a class="cursorRespondLink" href="https://github.com/Chetan-KK/"

@@ -101,6 +101,7 @@ function update() {
 //texture loader
 const loadingManager = new THREE.LoadingManager(
   () => {
+    animate();
     loaded();
   }
 );
@@ -167,7 +168,7 @@ scene.add(box);
  * particles
  */
 const particalsGeometary = new THREE.BufferGeometry();
-const count = 1000;
+const count = 500;
 
 const positions = new Float32Array(count * 3);
 const colors = new Float32Array(count * 3);
@@ -227,6 +228,7 @@ effectComposer.addPass(renderPass);
 
 const glitchPass = new GlitchPass();
 glitchPass.enabled = false;
+// glitchPass.goWild = true;
 effectComposer.addPass(glitchPass);
 
 
@@ -247,7 +249,7 @@ const tick = () => {
   torus.position.z = window.scrollY / 500;
   box.position.z = window.scrollY / 700;
 
-  particals.rotation.x = window.scrollY / 60;
+  particals.rotation.x = -window.scrollY / 700;
   particals.rotation.z = elapsedTime / 50;
 
   update();
@@ -262,11 +264,13 @@ tick();
 /**
  * gsap animation
  */
-gsap.from(camera.position, {
-  duration: 2,
-  x: 0,
-  y: 0,
-  z: -10,
-  delay: 2.5,
-  ease: "bounce.out"
-});
+function animate() {
+  gsap.from(camera.position, {
+    duration: 2,
+    x: 0,
+    y: 0,
+    z: -10,
+    delay: 2.5,
+    ease: "bounce.out"
+  });
+}

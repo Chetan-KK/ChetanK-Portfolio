@@ -50,7 +50,7 @@ scene.add(directionalLight);
 const directionalLight2 = new THREE.DirectionalLight(0xffffff, .5);
 scene.add(directionalLight2);
 
-const sphere = new THREE.Mesh(new THREE.TorusBufferGeometry(.7, .3, 6, 20), new THREE.MeshStandardMaterial({
+const sphere = new THREE.Mesh(new THREE.TorusBufferGeometry(.7, .4, 6, 20), new THREE.MeshStandardMaterial({
     roughness: .6,
     metalness: 1, normalMap: rockTexture
 }));

@@ -38,6 +38,9 @@ body {
 ::-webkit-scrollbar-thumb {
   background-image: linear-gradient(10deg, var(--primary-color), var(--black));
 }
+a{
+  text-decoration: none;
+}
 .flex {
   display: flex;
   justify-content: center;
@@ -132,15 +135,21 @@ body {
 }
 
 #button {
+  border-bottom: 1px solid var(--secondry-color);
   width: auto;
+  background-color: var(--blurBgColor);
   color: var(--secondry-color);
   padding: 0.3rem 2rem;
   box-shadow: 0 0 20px -5px var(--primary-color);
   margin: 1rem 0;
+  transition: var(--transition);
 }
 #button:hover {
   padding: 0.3rem 3rem;
   opacity: 0.7;
   box-shadow: 0 0 40px -5px var(--primary-color);
   background-color: var(--primary-color);
+}
+.disable{
+  pointer-events: none;
 }

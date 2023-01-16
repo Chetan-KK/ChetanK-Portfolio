@@ -33,10 +33,7 @@
   top: -20px;
 }
 .main-about .main-description {
-  display: flex;
   padding-top: 3.5rem;
-  flex-direction: column;
-  justify-content: center;
   height: 40rem;
   width: 40vw;
   text-align: justify;
@@ -57,18 +54,6 @@
   font-size: 3rem;
   line-height: 0;
 }
-.main-about #button {
-  background-color: transparent;
-  border: none;
-  background-color: var(--blurBgColor);
-  backdrop-filter: blur(8px);
-  font-family: var(--bebas-font);
-  letter-spacing: var(--letter-spacing);
-  font-size: 1.3rem;
-  width: fit-content;
-  transition: var(--transition);
-  text-decoration: none;
-}
 .myself {
   justify-content: space-around;
   width: 100%;
@@ -78,32 +63,16 @@
   background-color: var(--primary-color);
   border-radius: 20px;
   overflow: hidden;
-  height: 40rem;
+  width: 480px;
+  height: 640px;
   backdrop-filter: hue-rotate(120deg);
-}
-.myimg {
-  height: 40rem;
-  width: 30rem;
-  transition: var(--transition);
-}
-.myImgBox:hover {
-  box-shadow: 0 0 60px -5px var(--primary-color);
 }
 .main-projects {
   margin: 0 5rem;
   flex-direction: column;
 }
-.myImgBox {
-  position: relative;
-  background-color: var(--primary-color);
-  border-radius: 20px;
-  overflow: hidden;
-  height: 40rem;
-  backdrop-filter: hue-rotate(120deg);
-}
 .myimg {
-  height: 40rem;
-  width: 30rem;
+  width: 480px;
   transition: var(--transition);
 }
 .myImgBox:hover {

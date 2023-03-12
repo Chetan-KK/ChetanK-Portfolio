@@ -72,7 +72,7 @@ async function callAi() {
     aiOutput.innerText = 'Loading info please wait...';
     const configuration = new Configuration({
         organization: "org-k8MGUGI03Itd74phUwMjtJWX",
-        apiKey: "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",
+        apiKey: "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",
     });
     const openai = new OpenAIApi(configuration);
     const response = await openai.createCompletion({

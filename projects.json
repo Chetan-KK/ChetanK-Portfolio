@@ -1,31 +1,31 @@
 [
   {
     "title": "COVID-India Tracker (3-2019)",
-    "imgSrc": "http://chetank.dx.am/images/covid-project.png",
+    "imgSrc": "/media/images/covid-project.png",
     "disc": "<p>In this project I created an fully functional website/ web-application which can show users information about COVID-19 with dynamic API, users can also see news about COVID which updates daily, users can login and give a test to check they have COVID symptoms or not.</p> <p>It's UI contains two modes dark and light which can be stored into local storage and this can be installed as an application on desktop or mobile device and it's responsive for multiple size displays. </p>",
     "link": "https://chetan-kk.github.io/covid-design"
   },
   {
     "title": "Country Founder (12-2019)",
-    "imgSrc": "http://chetank.dx.am/images/country_founder-project.png",
+    "imgSrc": "/media/images/country_founder-project.png",
     "disc": "<p>This project is created using REACT JS where user can see details about particular country like it's population, area, spoken languages, regions etc.</p><p>User can interact with particular country section and see daily news about selected country. </p>",
     "link": "https://chetan-kk.github.io/Country-Founder-React/"
   },
   {
     "title": "College Management System (4-2019)",
-    "imgSrc": "http://chetank.dx.am/images/collegeMS-project.png",
+    "imgSrc": "/media/images/collegeMS-project.png",
     "disc": "<p>This Project is created for <b>Ashok polytechnic college</b> to manage <b>Students</b> and <b>Staff</b> of all departments</p>",
     "link": "https://github.com/Chetan-KK/Covid-India"
   },
   {
     "title": "Google Clone",
-    "imgSrc": "http://chetank.dx.am/images/google_clone-project.png",
+    "imgSrc": "/media/images/google_clone-project.png",
     "disc": "<p>This project is copy of google search page where user can search for almost anything, Here user can search for either the details or images. Here user can search for either the details or images.</p>",
     "link": "https://chetan-kk.github.io/Google-clone-with-API/"
   },
   {
     "title": "Google Clone",
-    "imgSrc": "http://chetank.dx.am/images/google_clone-project.png",
+    "imgSrc": "/media/images/google_clone-project.png",
     "disc": "<p>This project is copy of google search page where user can search for almost anything, Here user can search for either the details or images. Here user can search for either the details or images.</p>",
     "link": "https://chetan-kk.github.io/Google-clone-with-API/"
   }

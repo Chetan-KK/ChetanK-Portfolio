@@ -5,14 +5,7 @@
     flex-direction: column;
 }
 #aiOutput{
-    padding: 1.5rem;
-    text-align: justify;
-    color: var(--secondry-color);
-    font-family: var(--bebas-font);
-    letter-spacing: 2px;
-    font-size: 1.5rem;
-    box-shadow: 0 0 40px -5px var(--primary-color);
-    border: 1px solid var(--secondry-color);
-    width: 70vw;
-    backdrop-filter: blur(10px);
+    height: 20rem;
+    overflow: hidden;
+    overflow-y: scroll;
 }

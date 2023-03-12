@@ -7,7 +7,7 @@
   position: relative;
 }
 .main-footer .copyright {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--secondry-color);
   font-family: var(--bebas-font);
 }

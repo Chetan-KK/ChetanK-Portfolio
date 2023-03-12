@@ -6,7 +6,8 @@
   flex-direction: column;
 }
 .form form input,
-.form form textarea {
+.form form textarea,
+#aiOutput {
   position: relative;
   margin: 1rem 0;
   padding: 0.3rem 0.7rem;

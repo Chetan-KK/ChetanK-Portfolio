@@ -1,7 +1,7 @@
 import Tilt from "vanilla-tilt";
 
 
-const url = '/projects.json';
+const url = '/ChetanK-Portfolio/projects.json';
 
 const projectsElement = document.getElementById('projectsBox');
 

@@ -2,17 +2,17 @@ export default [
 
     {
         title: "Three js Portfolio",
-        imgSrc: "../../media/projects/threejs-portfolio-project/main.webp",
+        imgSrc: "/media/projects/threejs-portfolio-project/main.webp",
         desc: `The project integrates the power of Three.js to bring creative design to life with stunning animations and eye-catching graphics, making it a must-see for anyone interested in cutting-edge technology and creative design.
       This website features animations, motion design, and user interaction, creating a dynamic and interactive experience for visitors. The website is fully responsive, ensuring optimal viewing on any device, and includes a theme selector that allows you to customize the look and feel of the site.`,
-        link: "https://chetan-kk.github.io/ChetanK-Portfolio/",
+        link: "https://chetan-k-portfolio.vercel.app/",
         gitLink: "https://github.com/Chetan-KK/ChetanK-Portfolio",
         year: "5-2021",
     },
 
     {
         title: "Galaxy genrator",
-        imgSrc: "../../media/projects/galaxy-genrator/main.webp",
+        imgSrc: "/media/projects/galaxy-genrator/main.webp",
         desc: `The project is created using Three.js to bring creative Galaxy design to life with multiple tweeks to play with and create many kind of 3D Galaxies to use tweeks put #debug after the url ex: https://chetan-kk.github.io/THREE-js-Galaxy/#debug`,
         link: "https://chetan-kk.github.io/THREE-js-Galaxy/#debug",
         gitLink: "https://github.com/Chetan-KK/THREE-js-Galaxy",
@@ -20,7 +20,7 @@ export default [
     },
     {
         title: "Macbook 3D portfolio",
-        imgSrc: "../../media/projects/Macbook-3D-portfolio/main.webp",
+        imgSrc: "/media/projects/Macbook-3D-portfolio/main.webp",
         desc: "This website is created with React and React Three Fiber. In this users can access website in 3D laptop in webpage. i've created this with Three.js Journey course by Bruno Simon. macbook model is from Poimandres market place.",
         link: "https://laptop-portfolio-phi.vercel.app/",
         gitLink: "https://github.com/Chetan-KK/macbook-laptop-portfolio",
@@ -28,7 +28,7 @@ export default [
     },
     {
         title: "Marble Ball Game",
-        imgSrc: "../../media/projects/ball-game/main.webp",
+        imgSrc: "/media/projects/ball-game/main.webp",
         desc: "This website is created with React and React Three Fiber. In this Game we have to play roll the ball to the end and try to score less time to break record, i've created this with Three.js Journey course by Bruno Simon",
         link: "https://ball-game-mocha.vercel.app/",
         gitLink: "https://github.com/Chetan-KK/ball-game",
@@ -36,7 +36,7 @@ export default [
     },
     {
         title: "COVID-India Tracker",
-        imgSrc: "../../media/projects/covid-project/main.webp",
+        imgSrc: "/media/projects/covid-project/main.webp",
         desc: "This project is an innovative web-application designed to provide users with essential information about the COVID-19 pandemic. The application is built using dynamic APIs, which enable real-time updates of the latest COVID-19 statistics worldwide. In addition to providing users with current statistics, the application also allows users to access daily news updates about the virus. One unique feature of this application is the ability for users to log in and take a test to check for COVID symptoms, providing valuable information that can help in the prevention and spread of the virus. The user interface of the application is designed with two modes, a dark and light mode, which can be easily switched by the user and stored in local storage. Moreover, the application is fully responsive, meaning it can be accessed from various devices with different screen sizes, and it can even be installed as a progressive web application on desktop or mobile devices. Overall, this project offers a comprehensive, user-friendly, and interactive platform for accessing essential information about COVID-19.",
         link: "https://chetan-kk.github.io/covid-design",
         gitLink: "https://github.com/Chetan-KK/Covid-India",
@@ -44,7 +44,7 @@ export default [
     },
     {
         title: "Youtube Clone",
-        imgSrc: "../../media/projects/youtube-clone/main.webp",
+        imgSrc: "/media/projects/youtube-clone/main.webp",
         desc: "The YouTube Clone project aims to replicate the core functionality and features of the YouTube using React. This project serves as a learning exercise and an opportunity to practice building a complex web application with React components and external API integration. With this clone project, I aimed to replicate the core functionalities of YouTube, one of the world's most popular video-sharing platforms. By leveraging React's component-based architecture and the YouTube Data API, I successfully recreated features such as video playback, search functionality, recommended videos, etc.",
         link: "https://youtube-clone-one-jet.vercel.app/",
         gitLink: "https://github.com/Chetan-KK/youtube-clone",
@@ -52,7 +52,7 @@ export default [
     },
     {
         title: "Chill dark theme",
-        imgSrc: "../../media/projects/vscode-chill-dark-theme/main.webp",
+        imgSrc: "/media/projects/vscode-chill-dark-theme/main.webp",
         desc: "If you're a late night developer who loves to code in a dark environment, then this theme is perfect for you! I created this minimal dark theme specifically for those who prefer a simple yet stylish look. With a sleek and sophisticated design, this theme is sure to make your coding experience more enjoyable. Unlike other themes with too many fancy colors, this one is designed to provide a clean and minimalist feel, allowing you to focus on your code without any distractions. So, if you're looking for a cool, elegant, and user-friendly theme for your vscode editor, give this one a try!",
         link: "https://marketplace.visualstudio.com/items?itemName=ChetanKhulage.chill-dark-theme",
         gitLink: "https://github.com/Chetan-KK/chill-dark-vscode-theme",
@@ -60,7 +60,7 @@ export default [
     },
     {
         title: "Dashboard Template",
-        imgSrc: "../../media/projects/dashboard-template-next-js/main.webp",
+        imgSrc: "/media/projects/dashboard-template-next-js/main.webp",
         desc: `This GitHub project is a template for creating dynamic and visually appealing dashboard using Next.js. The template is designed with the Shadcn UI, for modern user interface. With support for multiple themes, this dashboard template is responsive and highly customizable.        `,
         link: "https://dashboard-template-next-js.vercel.app/",
         gitLink: "https://github.com/Chetan-KK/dashboard-template",
@@ -69,7 +69,7 @@ export default [
 
     {
         title: "Three js Physics",
-        imgSrc: "../../media/projects/three-js-physics/main.webp",
+        imgSrc: "/media/projects/three-js-physics/main.webp",
         desc: `A 3D website with physics allows users to create and manipulate virtual objects in a simulated three-dimensional environment. With this website, users can create cubes and spheres of various sizes and colors using intuitive tools and controls. One of the most exciting features of this website is the ability to see the cubes and spheres collide with each other. Users can watch as objects bounce, roll, and slide off each other, creating an immersive and interactive experience.`,
         link: "https://physics-practice.vercel.app/",
         gitLink: "https://github.com/Chetan-KK/physics-practice",
@@ -77,7 +77,7 @@ export default [
     },
     {
         title: "Free Minimal Resume Builder",
-        imgSrc: "../../media/projects/free-minimal-resume-builder/main.webp",
+        imgSrc: "/media/projects/free-minimal-resume-builder/main.webp",
         desc: "This site was created to provide job seekers with a simple yet powerful resume building tool. With its minimalist design and focus on essential resume sections, Free Minimal resume builder helps you create a resume that stands out to recruiters and hiring managers. To use Free Minimal resume builder all you need to do is enter your personal, education, and work history details into our resume builder. Our system then takes that information and automatically formats it into a clean, modern resume template. You can preview your resume, make edits, download it as a PDF, and start applying to jobs in minutes. this has only one template which is super perfect.",
         link: "https://free-minimal-resume-builder.vercel.app/",
         gitLink: "https://github.com/Chetan-KK/Free-Minimal-Resume-Builder",
@@ -85,7 +85,7 @@ export default [
     },
     {
         title: "Country Founder",
-        imgSrc: "../../media/projects/country_founder-project/main.webp",
+        imgSrc: "/media/projects/country_founder-project/main.webp",
         desc: "This project is developed using the popular JavaScript library, React JS, and is designed to provide users with a comprehensive view of information about various countries. With this application, users can access key details such as population, area, spoken languages, and regions of a particular country. The interface is user-friendly, enabling users to interact with specific country sections and get more detailed information about them. Moreover, users can also get daily news updates about their selected countries, allowing them to stay up-to-date with the latest happenings. This project provides a one-stop solution for users who want to learn more about different countries in a simple and interactive way. By leveraging the power of React JS, this project offers a responsive and visually appealing interface that is easy to use and navigate, ensuring a seamless user experience.",
         link: "https://chetan-kk.github.io/Country-Founder-React/",
         gitLink: "https://github.com/Chetan-KK/Country-Founder-React",
@@ -93,7 +93,7 @@ export default [
     },
     {
         title: "Shader sea",
-        imgSrc: "../../media/projects/shader-sea/main.webp",
+        imgSrc: "/media/projects/shader-sea/main.webp",
         desc: "The 3D website is a unique online platform that enables users to create their own personalized sea environment using glsl shaders. With this website, you can experience an interactive and visually stunning sea that you can tweak to your liking.",
         link: "https://threejs-shader-sea.vercel.app/",
         gitLink: "https://github.com/Chetan-KK/shader-sea",
@@ -101,7 +101,7 @@ export default [
     },
     {
         title: "Three js Portal scene",
-        imgSrc: "../../media/projects/portal-scene/main.webp",
+        imgSrc: "/media/projects/portal-scene/main.webp",
         desc: "This project is a showcase of three js portal scene which is created with blender and UV unwrapping, i've learned this with bruno simon's three js journey course.",
         link: "https://three-js-portal-scene-azure.vercel.app/#debug",
         gitLink: "https://github.com/Chetan-KK/final-threejs-portal.git",
@@ -109,14 +109,14 @@ export default [
     },
     {
         title: "150000+ downloads",
-        imgSrc: "../../media/projects/zedge/main.webp",
+        imgSrc: "/media/projects/zedge/main.webp",
         desc: "150000+ downloads on Zedge, Zedge is a website where we can download free wallpapers ringtones, notification tones and live wallpapers, here i've uploaded many images which i captured by my phone or some of them are created in photoshop, illustrator and picsart.",
         link: "https://www.zedge.net/profile/1685a153-68b7-4e02-a628-8285ecf8499a",
         year: "5-2018",
     },
     {
         title: "Age calculator",
-        imgSrc: "../../media/projects/age-calculator/main.webp",
+        imgSrc: "/media/projects/age-calculator/main.webp",
         desc: "The challenge on FrontendMentor presented a unique opportunity to showcase my skills in web development by creating an age calculator using React and an animated numbers library. I began by carefully studying the requirements of the project and planning out my approach to ensure that the end result would meet all the necessary criteria. With a clear strategy in place, I proceeded to develop the calculator with precision and attention to detail The end product was not only functional, but also aesthetically pleasing, with smooth animations that add a touch of elegance to the user experience. The use of React allowed for efficient management of state, while the animated numbers library made it possible to create dynamic and engaging animations that capture the user's attention. Overall, completing this challenge was a fulfilling experience that allowed me to sharpen my skills and showcase my abilities in web development.",
         link: "https://chetan-kk.github.io/age-calculator-solution/",
         gitLink: "https://github.com/Chetan-KK/age-calculator-solution",
@@ -124,7 +124,7 @@ export default [
     },
     {
         title: "Text Modifier",
-        imgSrc: "../../media/projects/text-modifier/main.webp",
+        imgSrc: "/media/projects/text-modifier/main.webp",
 
         desc: "This text modifier can do multiple things for you, like creating a dummy text, converting it in uppercase or lowercase, showing text in justified manner(filter), remove extra spaces from text etc., this is my first react application😁",
         link: "https://chetan-kk.github.io/Text-modifier-react-app/",
@@ -133,7 +133,7 @@ export default [
     },
     {
         title: "Google Clone",
-        imgSrc: "../../media/projects/google_clone-project/main.webp",
+        imgSrc: "/media/projects/google_clone-project/main.webp",
         desc: "This project is copy of google search page where user can search for almost anything, Here user can search for either the details or images. Here user can search for either the details or images.",
         link: "https://chetan-kk.github.io/Google-clone-with-API/",
         gitLink: "https://github.com/Chetan-KK/Google-clone-with-API",

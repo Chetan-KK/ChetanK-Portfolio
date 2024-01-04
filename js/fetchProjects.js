@@ -1,11 +1,11 @@
 import Tilt from "vanilla-tilt";
 
 
-const url = '/ChetanK-Portfolio/projects.json';
+const url = '/projects.json';
 
 const projectsElement = document.getElementById('projectsBox');
 
-function projectsTemplate(title, imgSrc, disc, link) {
+function projectsTemplate(title, imgSrc, desc, link) {
   projectsElement.innerHTML = projectsElement.innerHTML +
     `
     <div class="project">
@@ -15,7 +15,7 @@ function projectsTemplate(title, imgSrc, disc, link) {
             class="project-image"
           />
           <div class="project-description">
-            ${disc}
+            ${desc.slice(0, 400)}${desc.length < 400 ? "" : "..."}
             <div class="main-link cursorRespondLink">
               <a href="${link}" target="_blank"
                 >Visit Project</a
@@ -34,7 +34,7 @@ fetch(url)
       projectsTemplate(
         project.title,
         project.imgSrc,
-        project.disc,
+        project.desc,
         project.link
       );
     });

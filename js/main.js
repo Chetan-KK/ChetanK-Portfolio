@@ -1,4 +1,3 @@
-import { Configuration, OpenAIApi } from 'openai';
 import '../css/main.css';
 import '../css/header.css';
 import '../css/mainBody.css';
@@ -7,7 +6,6 @@ import '../css/projects.css';
 import '../css/contact.css';
 
 import '../css/footer.css';
-import '../css/ai.css';
 import '../css/media900.css';
 import '../css/media710.css';
 import '../css/media640.css';
@@ -37,14 +35,6 @@ console.log("%c This webiste is created by Chetan K", `
     border-radius:5px;
 `);
 
-
-const aiForm = document.getElementById('aiForm');
-
-aiForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    callAi();
-});
-
 const contactForm = document.getElementById('contactForm');
 const contactSubmit = document.querySelector('.contactSubmit');
 
@@ -62,24 +52,3 @@ contactForm.addEventListener('submit', (e) => {
     }, 10000);
     e.preventDefault();
 });
-
-const aiInput = document.getElementById('aiInput');
-const aiOutput = document.getElementById('aiOutput');
-
-aiOutput.innerText = 'Result will be here!';
-
-async function callAi() {
-    aiOutput.innerText = 'Loading info please wait...';
-    const configuration = new Configuration({
-        organization: "org-k8MGUGI03Itd74phUwMjtJWX",
-        apiKey: "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",
-    });
-    const openai = new OpenAIApi(configuration);
-    const response = await openai.createCompletion({
-        model: "text-davinci-003",
-        prompt: `${aiInput.value}`,
-        temperature: 0,
-        max_tokens: 1000,
-    });
-    aiOutput.innerText = response.data.choices[0].text;
-}

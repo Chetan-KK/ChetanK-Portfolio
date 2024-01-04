@@ -1,7 +1,5 @@
 import Tilt from "vanilla-tilt";
-
-
-const url = '/projects.json';
+import projects from "./utils/projects";
 
 const projectsElement = document.getElementById('projectsBox');
 
@@ -27,25 +25,20 @@ function projectsTemplate(title, imgSrc, desc, link) {
         `;
 }
 
-fetch(url)
-  .then(response => response.json())
-  .then(projects => {
-    projects.map(project => {
-      projectsTemplate(
-        project.title,
-        project.imgSrc,
-        project.desc,
-        project.link
-      );
-    });
-  }
-  ).finally(() => {
-    let projectsBox = document.querySelectorAll(".project");
 
-    Tilt.init(projectsBox, {
-      reverse: true,
-      speed: 1500,
-      reset: false,
-      max: 20,
-    });
-  });
+projects.map(project => {
+  projectsTemplate(
+    project.title,
+    project.imgSrc,
+    project.desc,
+    project.link
+  );
+});
+let projectsBox = document.querySelectorAll(".project");
+
+Tilt.init(projectsBox, {
+  reverse: true,
+  speed: 1500,
+  reset: false,
+  max: 20,
+});

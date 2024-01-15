@@ -1,6 +1,8 @@
 .project {
   margin: 0 0.6rem;
   opacity: 0.7;
+  width: 27rem;
+  height: 20rem;
   transition: var(--transition);
 }
 .projectScroll {
@@ -48,6 +50,39 @@
   font-size: 3.5rem;
 }
 
+/* placeholder */
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  justify-content: center;
+  font-family: var(--bebas-font);
+  font-size: 2.5em;
+  animation: opacity 1s infinite;
+}
+
+@keyframes opacity {
+  0% {
+    color: rgb(0, 0, 0);
+  }
+  50% {
+    color: gray;
+  }
+  100% {
+    color: rgb(0, 0, 0);
+  }
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/*  */
 .project-description {
   text-indent: 20px;
   opacity: 0;
